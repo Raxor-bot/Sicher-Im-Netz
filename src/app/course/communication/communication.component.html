@@ -1,0 +1,205 @@
+<div class="encryption-container">
+  <div class="encryption-content" *ngIf="currentStep === 1">
+    <h1>Verschlüsselung</h1>
+    <h2>Einführung</h2>
+    <p>
+      Willkommen zu diesem Modul über Verschlüsselung! Heute wirst du erfahren, wie Nachrichten und Daten sicher gemacht werden, damit nur die richtigen Personen sie lesen können. Am Ende des Moduls wirst du in der Lage sein, selbst einfache Verschlüsselungstechniken anzuwenden.
+    </p>
+    <h2>Was wirst du lernen?</h2>
+    <ul>
+      <li>Du kannst erklären, was Verschlüsselung ist und warum sie wichtig für den Schutz persönlicher Daten ist.</li>
+      <li>Du kannst den Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung benennen.</li>
+      <li>Du bist in der Lage, einfache Verschlüsselungstechniken wie die Caesar-Verschlüsselung und das Vigenère-Verfahren anzuwenden.</li>
+      <li>Du entwickelst ein Bewusstsein dafür, wie Verschlüsselung im Alltag eingesetzt wird, und kannst Beispiele wie Messenger-Dienste oder Online-Banking nennen.</li>
+    </ul>
+    <p>Am Ende des Moduls wirst du nicht nur theoretisches Wissen über Verschlüsselung besitzen, sondern auch praktische Erfahrungen gesammelt haben, die du im Alltag anwenden kannst. Klingt spannend? Dann lass uns loslegen!</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNhfXhH0inWHSLpSUyZnRkZ8zoQE7Tk0ilfQ&s" alt="Verschlüsselung">
+    <p><small>Quelle: <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNhfXhH0inWHSLpSUyZnRkZ8zoQE7Tk0ilfQ&s" target="_blank">Bildquelle</a></small></p>
+    <div class="button-container">
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="encryption-content" *ngIf="currentStep === 2">
+    <h1>Grundlagen der Verschlüsselung</h1>
+    <p>
+      Verschlüsselung ist ein Verfahren, bei dem Informationen in einen Geheimcode umgewandelt werden, um sie vor unbefugtem Zugriff zu schützen. Nur wer den passenden Schlüssel besitzt, kann die verschlüsselten Informationen wieder lesbar machen.
+    </p>
+
+    <h2>Symmetrische Verschlüsselung</h2>
+    <p>
+      Bei der symmetrischen Verschlüsselung verwenden Sender und Empfänger denselben Schlüssel zum Ver- und Entschlüsseln der Nachricht. Das ist schnell und effizient, aber der Schlüssel muss sicher zwischen den Parteien ausgetauscht werden. [1]
+    </p>
+    <img src="https://www.ecos.de/fileadmin/ecos/01_pictures/13_Blog_Pics/Symmetrische_Verschluesselung.png" alt="Symmetrische Verschlüsselung">
+    <p><small>Quelle: <a href="https://www.ecos.de/fileadmin/ecos/01_pictures/13_Blog_Pics/Symmetrische_Verschluesselung.png" target="_blank">ECOS Blog</a></small></p>
+
+    <h2>Asymmetrische Verschlüsselung</h2>
+    <p>
+      Die asymmetrische Verschlüsselung verwendet zwei verschiedene Schlüssel: einen öffentlichen und einen privaten Schlüssel. Der öffentliche Schlüssel wird zum Verschlüsseln der Nachricht verwendet, und der private Schlüssel wird benötigt, um die Nachricht zu entschlüsseln. Diese Methode ist sicherer, da der private Schlüssel geheim bleibt. [1]
+    </p>
+    <img src="https://www.ecos.de/fileadmin/ecos/01_pictures/13_Blog_Pics/Asymmetrische_Verschluesselung.png" alt="Asymmetrische Verschlüsselung">
+    <p><small>Quelle: <a href="https://www.ecos.de/fileadmin/ecos/01_pictures/13_Blog_Pics/Asymmetrische_Verschluesselung.png" target="_blank">ECOS Blog</a></small></p>
+
+    <p>Beispiel:</p>
+    <p>
+      Stell dir vor, du möchtest eine Nachricht verschicken, die nur dein Freund lesen kann. Du verschlüsselst die Nachricht mit einem Schlüssel (symmetrisch) oder einem öffentlichen Schlüssel (asymmetrisch). Nur mit dem passenden Schlüssel kann dein Freund die Nachricht wieder entschlüsseln und lesen.
+    </p>
+
+    <br>
+    <p>Quelle: </p>
+    <p><a href="https://www.ecos.de/blog/asymmetrische-verschluesselung-einfach-erklaert">[1] asymmetrische-verschluesselung-einfach-erklaert</a></p>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="encryption-content" *ngIf="currentStep === 3">
+    <h2>Symmetrische Verschlüsselung</h2>
+    <p>
+      Symmetrische Verschlüsselung ist eine Methode, bei der der gleiche Schlüssel verwendet wird, um Nachrichten zu ver- und entschlüsseln. Das bedeutet, dass sowohl der Sender als auch der Empfänger denselben geheimen Schlüssel haben müssen, um die Nachricht zu lesen.
+    </p>
+    <h3>Beispiel: Caesar-Verschlüsselung</h3>
+    <img style="width: 40%" src="https://www.deutsches-spionagemuseum.de/wp-content/uploads/2021/05/cipherdisk2000.jpg" alt="Caesar Chiffre">
+    <p><small>Quelle: <a href="https://www.deutsches-spionagemuseum.de/2021/05/06/geschichte-der-kryptologie-2-mittelalter-und-fruehe-neuzeit" target="_blank">Deutsches Spionagemuseum</a></small></p>
+
+    <p>
+      Eine einfache Form der symmetrischen Verschlüsselung ist die Caesar-Verschlüsselung. Dabei wird jeder Buchstabe im Text um eine feste Anzahl von Stellen im Alphabet verschoben.
+    </p>
+    <h3>So funktioniert es:</h3>
+    <p>
+      <b>Originaltext:</b> HELLO
+      <br>
+      <b>Verschlüsselungsschlüssel:</b> Verschiebe jeden Buchstaben um 3 Stellen nach rechts.
+      <br>
+      <b>Verschlüsselter Text:</b> KHOOR
+    </p>
+
+    <h2>Aufgabe: Caesar-Verschlüsselung</h2>
+    <img src="https://www.researchgate.net/publication/352792492/figure/fig2/AS:1039680208396288@1624890486943/Encoding-of-the-letters-in-The-Caesar-Cipher-6.ppm" alt="Alphabet">
+    <p><small>Quelle: <a href="https://www.researchgate.net/publication/352792492/figure/fig2/AS:1039680208396288@1624890486943/Encoding-of-the-letters-in-The-Caesar-Cipher-6.ppm" target="_blank">ResearchGate</a></small></p>
+
+    <p>Entschlüssele den folgenden Text, der mit der Caesar-Verschlüsselung verschlüsselt wurde (Verschiebung um 3 Buchstaben): "lfk ndp, lfk vdk, lfk vlhjwh".</p>
+    <p *ngIf="isTeacher" class="teacher">Falls es Probleme gibt, nochmal drauf Hinweisen das der Text in Kleinbuchstaben bleibt</p>
+    <p *ngIf="isTeacher" class="teacher">Lösung: ich kam, ich sah, ich siegte</p>
+    <input type="text" [(ngModel)]="decryptedMessage" placeholder="Entschlüsselte Nachricht">
+    <button (click)="checkCaesarDecryption()">Überprüfen</button>
+    <p *ngIf="decryptionFeedback">{{ decryptionFeedback }}</p>
+
+    <p>Quelle:</p>
+    <a href="https://www.tu-chemnitz.de/informatik/ThIS/vlzits/caesar.html">Cäsar-Chiffre</a>
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!decryptionCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="encryption-content" *ngIf="currentStep === 4">
+    <h2>Symmetrische Verschlüsselung</h2>
+    <p>Die Vigenère-Verschlüsselung ist ein weiteres symmetrisches Verfahren, das ihr ausprobieren könnt. Es ist wenig komplexer als die Caesar-Verschlüsselung, aber genauso spannend!</p>
+    <img style="width: 40%" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Vigenere.jpg" alt="Bild von Vigenère">
+    <p><small>Quelle: <a href="https://upload.wikimedia.org/wikipedia/commons/1/1a/Vigenere.jpg" target="_blank">Wikimedia</a></small></p>
+
+    <h3>Beispiel: Vigenère-Verfahren</h3>
+    <p>
+      Bei der Vigenère-Verschlüsselung verwendet ihr ein Schlüsselwort, um den Text zu verschlüsseln.
+      Das Schlüsselwort wird wiederholt, um die Länge des Originaltexts zu erreichen.
+      Dann wird jeder Buchstabe des Originaltexts mit dem entsprechenden Buchstaben des Schlüsselworts verschlüsselt.
+    </p>
+    <h3>So funktioniert es:</h3>
+    <p>
+      <b>Originaltext:</b> SICHERHEIT
+      <br>
+      <b>Schlüsselwort:</b> CYBER
+      <br>
+      <b>Verschlüsselter Text:</b> UGAIIPJKCX
+    </p>
+
+    <ul>
+      <li>S (18) + C (2) = U (20)</li>
+      <li>I (8) + Y (24) = G (6) (Da das Alphabet nicht so lang ist, musst du wieder bei A(0) Anfangen)</li>
+      <li>C (2) + B (1) = D (3)</li>
+      <li>H (7) + E (4) = L (11)</li>
+      usw.
+    </ul>
+    <p><b>Verschlüsselter Text:</b> UGAIIPJKCX</p>
+
+    <h2>Aufgabe: Vigenère-Verfahren</h2>
+    <img src="https://www.researchgate.net/publication/352792492/figure/fig2/AS:1039680208396288@1624890486943/Encoding-of-the-letters-in-The-Caesar-Cipher-6.ppm" alt="Alphabet">
+    <p><small>Quelle: <a href="https://www.researchgate.net/publication/352792492/figure/fig2/AS:1039680208396288@1624890486943/Encoding-of-the-letters-in-The-Caesar-Cipher-6.ppm" target="_blank">ResearchGate</a></small></p>
+
+    <p>Entschlüssele den folgenden Text, der mit dem Vigenère-Verfahren verschlüsselt wurde, Schlüsselwort (Cyber): "fyt mjv cjr cclhii uyud, ucq oiixr, phvt?!" (Bei der Lösung Satzzeichen mit eingegeben).</p>
+    <input type="text" [(ngModel)]="decryptedMessage" placeholder="Entschlüsselte Nachricht">
+    <button (click)="checkVingreDecryption()">Überprüfen</button>
+    <p *ngIf="decryptionFeedback">{{ decryptionFeedback }}</p>
+    <p *ngIf="isTeacher" class="teacher">Falls es Probleme gibt, nochmal drauf Hinweisen das der Text in Kleinbuchstaben bleibt</p>
+    <p *ngIf="isTeacher" class="teacher">Lösung: das ist ein langer satz, das nervt, oder?!</p>
+    <p>Quelle:</p>
+    <a href="https://www.tu-chemnitz.de/informatik/ThIS/vlzits/vigenere.html">Vigenère-Chiffre</a>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!decryptionCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="encryption-content" *ngIf="currentStep === 5">
+  <h1>Gruppenarbeit: Entwickle deine eigene Verschlüsselung</h1>
+  <p>In dieser Aufgabe wirst du zusammen mit zwei anderen Mitschülern eine eigene Verschlüsselungsmethode entwickeln. Eure Gruppe besteht aus insgesamt 3 Personen. Das Ziel ist es, eine Nachricht so zu verschlüsseln, dass nur die Gruppe, die eure Anleitung erhält, diese wieder entschlüsseln kann.</p>
+
+  <h2>Anleitung zur Erstellung eurer Verschlüsselung:</h2>
+  <ol>
+    <li>Trefft euch in eurer Gruppe und entscheidet, welche Art von Verschlüsselung ihr verwenden möchtet. Ihr könnt eine einfache Methode wie die Caesar-Verschlüsselung modifizieren oder euch eine komplett neue ausdenken.</li>
+    <li>Erstellt eine klare Anleitung, wie eure Verschlüsselung funktioniert. Diese Anleitung gebt ihr später an eine andere Gruppe weiter, damit sie eure verschlüsselte Nachricht entschlüsseln kann.</li>
+    <li>Verschlüsselt eine kurze Nachricht eurer Wahl mit eurer Methode.</li>
+  </ol>
+
+  <h2>Beispiel: Modifizierte Caesar-Verschlüsselung</h2>
+  <p>Ihr könnt zum Beispiel die Caesar-Verschlüsselung so anpassen, dass jeder Buchstabe im Text um die Position des Buchstabens im Alphabet verschoben wird. Wenn der Originalbuchstabe ein A (1. Buchstabe) ist, wird er um 1 Stelle verschoben, also zu B. Wenn der Buchstabe ein B (2. Buchstabe) ist, wird er um 2 Stellen verschoben, also zu D.</p>
+  <p><b>Originaltext:</b> HELLO</p>
+  <p><b>Verschlüsselter Text:</b> IGOPT (H→I, E→G, L→O, L→P, O→T)</p>
+
+  <h2>Tipps:</h2>
+  <ul>
+    <li>Denk daran, dass eure Verschlüsselung sicher sein sollte, aber auch so verständlich, dass sie mit der Anleitung entschlüsselt werden kann.</li>
+    <li>Testet eure Methode zuerst in der Gruppe, um sicherzustellen, dass sie funktioniert.</li>
+  </ul>
+
+  <h2>Nach der Verschlüsselung:</h2>
+  <p>Nachdem ihr die Nachricht verschlüsselt habt, tauscht eure verschlüsselte Nachricht und die Anleitung mit einer anderen Gruppe. Diese Gruppe wird versuchen, eure Nachricht zu entschlüsseln.</p>
+
+  <div class="button-container">
+    <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+    <button class="next-button" (click)="goToNext()">Weiter</button>
+  </div>
+</div>
+
+
+  <div class="encryption-content" *ngIf="currentStep === 6">
+    <h2>Diskussion: Verschlüsselung im Alltag</h2>
+    <p>Überlege, wo du im Alltag auf Verschlüsselung stößt. Beispiele können sein:</p>
+    <ul>
+      <li>WhatsApp und andere Messenger-Dienste, die Ende-zu-Ende-Verschlüsselung nutzen, um Nachrichten zu schützen.</li>
+      <li>Online-Banking, bei dem sensible Daten durch Verschlüsselung geschützt werden.</li>
+      <li>Verschlüsselte E-Mails, die sicherstellen, dass nur der beabsichtigte Empfänger den Inhalt lesen kann.</li>
+      <li>Websites, die HTTPS verwenden, um eine sichere Verbindung zwischen deinem Browser und der Website herzustellen.</li>
+    </ul>
+    <p>Teile deine Erkenntnisse mit deinem Sitznachbarn und der Klasse.</p>
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="encryption-content" *ngIf="currentStep === 7">
+    <h2>Zusammenfassung</h2>
+    <p>In diesem Modul hast du gelernt, was Verschlüsselung ist, warum sie wichtig ist und wie verschiedene Verschlüsselungsmethoden funktionieren. Du hast selbst Verschlüsselung ausprobiert und gesehen, wie sie unsere Daten schützt.</p>
+    <p>Die Beispiele aus dem Alltag zeigen, wie oft wir auf Verschlüsselung angewiesen sind, um unsere Informationen sicher zu halten, sei es bei der Kommunikation, beim Einkaufen oder bei der Nutzung von Online-Diensten.</p>
+  <br>
+    <h2>Gehe nun zurück zur Startseite</h2>
+  </div>
+
+  <app-home-button></app-home-button>
+</div>
+

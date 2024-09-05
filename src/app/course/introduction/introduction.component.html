@@ -1,0 +1,532 @@
+<div class="introduction-container">
+  <!-- Schritt 1: Einführung -->
+  <div class="introduction-content" *ngIf="currentStep === 1">
+    <h1>Einführung in die Internetsicherheit</h1>
+
+    <h2>Willkommen zum Kurs „Sicher im Netz“!</h2>
+    <p>
+      Das Internet ist ein wichtiger Teil deines Alltags – du chattest, schaust Videos und lernst online. Aber dabei gibt es auch Gefahren, die du kennen solltest.
+    </p>
+    <h2>Was erwartet dich in diesem Modul?</h2>
+    <p>In den nächsten 90 Minuten wirst du lernen, wie du sicher im Internet unterwegs bist. Es ist nicht nötig, ein Technikprofi zu sein – alle Themen werden dir Schritt für Schritt erklärt.</p>
+
+
+    <h2>Lernziele dieses Moduls:</h2>
+    <ul>
+      <li>Du wirst verstehen, was Internetsicherheit bedeutet und warum sie wichtig ist.</li>
+      <li>Du wirst in der Lage sein, sichere von unsicheren Websites zu unterscheiden.</li>
+      <li>Du wirst lernen, was Cookies sind und wie du deine Cookie-Einstellungen anpassen kannst, um deine Privatsphäre zu schützen.</li>
+      <li>Du wirst die Fähigkeit entwickeln, potenzielle Bedrohungen wie Phishing und Malware zu erkennen und zu vermeiden.</li>
+    </ul>
+
+    <h2>Warum ist das wichtig?</h2>
+    <p>Mit diesem Wissen wirst du in der Lage sein, dich sicherer im Netz zu bewegen, deine persönlichen Daten zu schützen und Gefahren wie Phishing und Malware zu erkennen.</p>
+
+    <h2>Bist du bereit?</h2>
+    <p>Klicke auf „Weiter“, um mit dem Modul zu starten!</p>
+    <div class="button-container">
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Schritt 2: Grundlegende Konzepte -->
+  <div class="introduction-content" *ngIf="currentStep === 2">
+    <h1>Grundlegende Konzepte der Internetsicherheit</h1>
+
+    <h2>Was ist Internetsicherheit?</h2>
+    <p>
+      Internetsicherheit bedeutet, dass du dich und deine Daten beim Surfen im Internet schützt. Dazu gehört alles, was du online machst, wie zum Beispiel das Surfen auf Webseiten, das Chatten mit Freunden oder das Einkaufen. Internetsicherheit ist ein Teil von größeren Themen wie der Cybersicherheit, bei der es darum geht, sicherzustellen, dass dein Computer, deine Apps und dein Online-Verhalten sicher sind. [1]
+    </p>
+
+
+    <h2>Warum ist Internetsicherheit wichtig?</h2>
+    <p>
+      Wir verbringen viel Zeit im Internet, aber dabei gibt es auch Gefahren. Zum Beispiel könnten Hacker versuchen, auf deine E-Mail oder deine Social-Media-Konten zuzugreifen.
+      Es gibt auch Viren und schädliche Programme, die deinen Computer beschädigen oder deine Daten stehlen könnten.
+      Manchmal versuchen Betrüger auch, deine persönlichen Informationen zu klauen, um sie für kriminelle Zwecke zu nutzen.
+      Internetsicherheit hilft dabei, dich vor diesen Gefahren zu schützen, damit du sicher im Internet unterwegs sein kannst. [1]    </p>
+
+    <br>
+    <h2>Aufgabe</h2>
+    <p>Diskutiere diese Fragen mit deinem Sitznachbarn oder in kleinen Gruppen:</p>
+    <ul>
+      <li><b>Hast du schon einmal von Phishing gehört? Was denkst du, was das bedeutet?</b></li>
+      <li><b>Weißt du, was Malware ist? Welche Arten von Malware kennst du?</b></li>
+    </ul>
+
+    <br>
+    <h2>Hier kannst du dir Erklärungstexte zu beiden Fragen anschauen?</h2>
+    <button (click)="showExplanation()">Erklärung anzeigen</button>
+
+    <div *ngIf="showExplanationText">
+      <h3>Was ist Phishing?</h3>
+      <p>Phishing ist eine Art von Betrug im Internet, bei dem Hacker versuchen, dich mit gefälschten E-Mails hereinzulegen.
+        Diese E-Mails sehen oft so aus, als kämen sie von einer Bank oder einem Kumpel, um dich zu täuschen.
+        Sie wollen, dass du auf einen Link klickst oder einen Anhang öffnest.
+        Wenn du das machst, könnten deine persönlichen Daten gestohlen werden oder dein Computer mit einem Virus infiziert werden.
+        Phishing gibt es schon seit den 1990er Jahren, und es ist immer noch eine beliebte Methode für Betrüger, um an Informationen zu kommen.
+        Heute sind diese Betrugsversuche oft schwerer zu erkennen, weil sie immer besser gemacht werden. [1]
+      </p>
+
+      <h3>Was ist Malware?</h3>
+      <p>
+        Malware ist eine Mischung aus den englischen Wörtern „malicious“ (was so viel wie „schädlich“ bedeutet) und „Software“.
+        Mit diesem Begriff meint man schädliche Programme wie Viren, Würmer oder Trojaner.
+        Diese Programme werden von Hackern benutzt, um Unordnung zu stiften oder vertrauliche Informationen zu stehlen.
+        Jede Art von Software, die entwickelt wurde, um einen Computer, Server oder ein Netzwerk zu schädigen, nennt man Malware [1]
+      </p>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+      <h2>Quellen</h2>
+      <a href="https://www.kaspersky.de/resource-center/definitions/what-is-internet-security" target="_blank">[1] Internetsicherheit: Was versteht man darunter und wie können Sie sich online schützen?</a>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Schritt 3: Raum erstellen und beitreten -->
+  <div class="introduction-content" *ngIf="currentStep === 3">
+    <h1>Gruppenarbeit: Bedrohungen des Alltags</h1>
+
+    <h2>Deine Aufgabe</h2>
+    <p>
+      Du wirst gleich einem Raum beitreten, in dem du zusammen mit deinen Mitschülern an einem wichtigen Thema zur Internetsicherheit arbeitest.
+      Euer Ziel ist es, das Thema zu verstehen und es später den anderen Schülern vorzustellen.
+    </p>
+
+    <h2>Themenauswahl</h2>
+    <p>
+      Dein Kursleiter wird euch gleich ein Thema zuteilen. Hier sind einige der möglichen Themen:
+    </p>
+    <ul>
+      <li>Malware</li>
+      <li>Phishing</li>
+      <li>Ransomware</li>
+      <li>Spyware</li>
+      <li>Adware</li>
+    </ul>
+
+    <h2>So geht's weiter</h2>
+    <p>
+      Der Kursleiter wird einen Raum für euch erstellen. Ihr tretet diesem Raum bei, indem ihr den Namen des Raums eingebt. Sobald alle in eurem Raum sind, könnt ihr loslegen!
+    </p>
+
+    <div *ngIf="isTeacher">
+      <h2>Raum erstellen</h2>
+      <form (submit)="createRoom($event)">
+        <label for="createRoomName">Raumname:</label>
+        <input type="text" id="createRoomName" [(ngModel)]="roomName1" name="createRoomName" required>
+        <button type="submit">Raum erstellen</button>
+      </form>
+      <div *ngIf="roomId">
+        <p>Raum Name: {{ roomName1 }}</p>
+        <p>Teile diesen Namen mit deinen Schülern, damit sie dem Raum beitreten können.</p>
+        <p>Wenn alle so weit sind klicken Sie auf weiter</p>
+      </div>
+    </div>
+
+    <!-- Abschnitt für Schüler -->
+    <div *ngIf="!isTeacher">
+      <h2>Raum beitreten</h2>
+      <form (submit)="joinRoom($event)">
+        <label for="joinRoomName">Raumname: </label>
+        <input type="text" id="joinRoomName" [(ngModel)]="roomName2" name="joinRoomName" required>
+        <button type="submit">Beitreten</button>
+      </form>
+      <div *ngIf="roomId">
+        <p>Du bist dem Raum beigetreten: {{ roomId }}</p>
+        <p>klicke auf weiter</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Schritt 4: Teilnehmer im Raum -->
+  <div class="introduction-content" *ngIf="currentStep === 4">
+    <h1>Teilnehmer im Raum</h1>
+    <div *ngIf="roomId">
+      <p>Raum ID: {{ roomId }}</p>
+      <ul>
+        <li *ngFor="let student of students">{{ student }}</li>
+      </ul>
+      <div *ngIf="isTeacher">
+        <p>Sobald Sie starten werden die Schüler unterschiedlichen Themen erhalten und die Anweisung wie sie vorgehen müssen erhalten</p>
+        <button (click)="startSession()">Start</button>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Schritt 5: Cyber-Probleme -->
+  <div class="introduction-content" *ngIf="currentStep === 5">
+      <div *ngIf="assignedProblem === 'Malware'">
+        <h1>Gruppenarbeit: Malware verstehen und erklären</h1>
+        <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Malware“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+        <h2>Schritt 1: Grundlagen verstehen</h2>
+        <p>Lest gemeinsam die folgenden Informationen über Malware und besprecht, was ihr dabei gelernt habt:</p>
+        <a href="https://www.heise.de/tipps-tricks/Was-ist-Malware-4614964.html" target="_blank">Was ist Malware?</a>
+        <ul>
+          <li>Was ist Malware und welche Arten gibt es?</li>
+          <li>Wie kann Malware auf ein System gelangen?</li>
+          <li>Welche Auswirkungen kann Malware auf ein infiziertes System haben?</li>
+        </ul>
+
+        <h2>Schritt 2: Diskutieren und vertiefen</h2>
+        <p>Diskutiert in der Gruppe, wie ihr euch vor Malware schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+        <ul>
+          <li>Wie kann man sich vor Malware schützen?</li>
+          <li>Welche Maßnahmen sollten ergriffen werden, wenn ein System mit Malware infiziert ist?</li>
+        </ul>
+
+        <h2>Schritt 3: Präsentation vorbereiten</h2>
+        <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Malware gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+        <ul>
+          <li>Erstellt eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+          <li>Entscheidet, wer was in der Präsentation sagt.</li>
+          <li>Übt eure Präsentation kurz in der Gruppe.</li>
+        </ul>
+      </div>
+
+      <div *ngIf="assignedProblem === 'Phishing'">
+        <h1>Gruppenarbeit: Phishing erkennen und vermeiden</h1>
+        <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Phishing“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+        <h2>Schritt 1: Grundlagen verstehen</h2>
+        <p>Lest gemeinsam die folgenden Informationen über Phishing und besprecht, was ihr dabei gelernt habt:</p>
+        <a href="https://www.ibm.com/de-de/topics/phishing" target="_blank">Was ist Phishing?</a>
+        <ul>
+          <li>Was versteht man unter Phishing?</li>
+          <li>Welche Techniken werden häufig bei Phishing-Angriffen verwendet?</li>
+          <li>Welche Anzeichen deuten darauf hin, dass eine E-Mail oder Nachricht ein Phishing-Versuch ist?</li>
+        </ul>
+
+        <h2>Schritt 2: Diskutieren und vertiefen</h2>
+        <p>Diskutiert in der Gruppe, wie ihr euch vor Phishing-Angriffen schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+        <ul>
+          <li>Wie kann man sich vor Phishing-Angriffen schützen?</li>
+          <li>Was sollte man tun, wenn man auf einen Phishing-Angriff hereingefallen ist?</li>
+        </ul>
+
+        <h2>Schritt 3: Präsentation vorbereiten</h2>
+        <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Phishing gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+        <ul>
+          <li>Erstellt eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+          <li>Entscheidet, wer was in der Präsentation sagt.</li>
+          <li>Übt eure Präsentation kurz in der Gruppe.</li>
+        </ul>
+      </div>
+
+      <div *ngIf="assignedProblem === 'Ransomware'">
+        <h1>Gruppenarbeit: Ransomware verstehen und erklären</h1>
+        <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Ransomware“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+        <h2>Schritt 1: Grundlagen verstehen</h2>
+        <p>Lest gemeinsam die folgenden Informationen über Ransomware und besprecht, was ihr dabei gelernt habt:</p>
+        <a href="https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Cyber-Sicherheitslage/Methoden-der-Cyber-Kriminalitaet/Schadprogramme/Ransomware/ransomware_node.html" target="_blank">Was ist Ransomware?</a>
+        <ul>
+          <li>Was ist Ransomware und wie funktioniert sie?</li>
+          <li>Welche Arten von Ransomware gibt es?</li>
+          <li>Wie verbreitet sich Ransomware typischerweise?</li>
+        </ul>
+
+        <h2>Schritt 2: Diskutieren und vertiefen</h2>
+        <p>Diskutiert in der Gruppe, wie ihr euch vor Ransomware schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+        <ul>
+          <li>Welche Vorsichtsmaßnahmen können helfen, eine Infektion mit Ransomware zu vermeiden?</li>
+          <li>Welche Schritte sollten unternommen werden, wenn ein System mit Ransomware infiziert ist?</li>
+        </ul>
+
+        <h2>Schritt 3: Präsentation vorbereiten</h2>
+        <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Ransomware gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+        <ul>
+          <li>Erstellt eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+          <li>Entscheidet, wer was in der Präsentation sagt.</li>
+          <li>Übt eure Präsentation kurz in der Gruppe.</li>
+        </ul>
+      </div>
+      <div *ngIf="assignedProblem === 'Spyware'">
+        <h1>Gruppenarbeit: Spyware verstehen und erklären</h1>
+        <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Spyware“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+        <h2>Schritt 1: Grundlagen verstehen</h2>
+        <p>Lest gemeinsam die folgenden Informationen über Spyware und besprecht, was ihr dabei gelernt habt:</p>
+        <a href="https://de.malwarebytes.com/spyware/" target="_blank">Was ist Spyware?</a>
+        <ul>
+          <li>Was ist Spyware und welche Arten gibt es?</li>
+          <li>Wie kann Spyware auf ein System gelangen?</li>
+          <li>Welche Auswirkungen kann Spyware auf ein infiziertes System haben?</li>
+        </ul>
+
+        <h2>Schritt 2: Diskutieren und vertiefen</h2>
+        <p>Diskutiert in der Gruppe, wie ihr euch vor Spyware schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+        <ul>
+          <li>Wie kann man Spyware erkennen und entfernen?</li>
+          <li>Welche Maßnahmen kann man ergreifen, um sich vor Spyware zu schützen?</li>
+        </ul>
+
+        <h2>Schritt 3: Präsentation vorbereiten</h2>
+        <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Spyware gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+        <ul>
+          <li>Erstellt eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+          <li>Entscheidet, wer was in der Präsentation sagt.</li>
+          <li>Übt eure Präsentation kurz in der Gruppe.</li>
+        </ul>
+      </div>
+      <div *ngIf="assignedProblem === 'Adware'">
+        <h1>Gruppenarbeit: Adware verstehen und erklären</h1>
+        <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Adware“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+        <h2>Schritt 1: Grundlagen verstehen</h2>
+        <p>Lest gemeinsam die folgenden Informationen über Adware und besprecht, was ihr dabei gelernt habt:</p>
+        <a href="https://www.kaspersky.de/resource-center/threats/adware" target="_blank">Was ist Adware?</a>
+        <ul>
+          <li>Was ist Adware und wie unterscheidet sie sich von anderen Malware-Typen?</li>
+          <li>Wie kann Adware auf ein System gelangen?</li>
+          <li>Welche Auswirkungen kann Adware auf ein infiziertes System haben?</li>
+        </ul>
+
+        <h2>Schritt 2: Diskutieren und vertiefen</h2>
+        <p>Diskutiert in der Gruppe, wie ihr euch vor Adware schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+        <ul>
+          <li>Wie kann man Adware entfernen?</li>
+          <li>Welche Vorsichtsmaßnahmen kann man treffen, um eine Infektion mit Adware zu vermeiden?</li>
+        </ul>
+
+        <h2>Schritt 3: Präsentation vorbereiten</h2>
+        <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Adware gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+        <ul>
+          <li>Erstellt eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+          <li>Entscheidet, wer was in der Präsentation sagt.</li>
+          <li>Übt eure Präsentation kurz in der Gruppe.</li>
+        </ul>
+      </div>
+
+      <p>Nachdem Ihr alle durch seid könnt ihr auf weiter klicken</p>
+    <button class="next-button" (click)="goToNext()">Weiter</button>
+  </div>
+
+  <div class="introduction-content" *ngIf="currentStep === 6">
+    <h1>Was ist eine URL?</h1>
+    <p>Eine URL (das steht für Uniform Resource Locator) ist wie eine Adresse im Internet. Sie zeigt genau, wo eine Datei oder eine Webseite auf einem Server gespeichert ist. Wenn du eine URL in deinen Webbrowser eingibst, gelangst du zu der Webseite oder Datei, die dort gespeichert ist. URLs können auch in einem Text eingebaut werden, damit man durch Anklicken direkt zu einer anderen Webseite kommt. [2]</p>
+    <img src="https://www.eology.de/wp-content/uploads/2020/04/URL-Bestandteile.png" alt="Aufbau einer URL">
+    <p>Quelle: <a href="https://www.eology.de/wiki/url">https://www.eology.de/wiki/url</a></p>
+    <h2>Wie erkenne ich, ob eine Website sicher ist?</h2>
+    <p>Es gibt Hinweise, die dir helfen können, eine sichere Website zu erkennen. Das wichtigste Zeichen ist das Übertragungsprotokoll am Anfang der URL:</p>
+    <ul>
+      <li><b>HTTPS:</b> Sicher. Deine Daten werden verschlüsselt zwischen deinem Computer und dem Server übertragen. Das bedeutet, dass niemand, der die Verbindung abhört, deine Daten einfach lesen kann.</li>
+      <li><b>HTTP:</b> Unsicher. Deine Daten werden unverschlüsselt übertragen, was bedeutet, dass sie auf dem Weg vom Nutzer zum Server abgefangen und gelesen werden könnten.</li>
+    </ul>
+    <p style="color: red"><b>Kurz gesagt: HTTP ist unsicher, HTTPS ist sicher. Wenn du sensible Informationen wie Passwörter oder Kreditkartendaten eingibst, solltest du immer darauf achten, dass die Website HTTPS verwendet.</b></p>
+    <br>
+
+    <div class="question-section">
+      <h3>Tausch dich nun mit deinem Partner über diese Fragen aus:</h3>
+      <ul>
+        <li>Warum ist es sicherer, eine Website mit HTTPS statt HTTP zu verwenden?</li>
+        <p *ngIf="isTeacher" class="teacher">Lösung: Daten werden verschlüsselt übertragen</p>
+        <li>In welchen Fällen reicht http aus? (Eingabe von Daten)</li>
+        <p *ngIf="isTeacher" class="teacher">Lösung: Wenn kene Daten übertragen werden</p>
+        <li>Wie kannst du überprüfen, ob eine kommunikation sicher (HTTPS) ist, bevor du persönliche Informationen eingibst?</li>
+        <p *ngIf="isTeacher" class="teacher">Lösung: auf die URL im Browserfenster klicken oder auf den Knopf links davon</p>
+        <li>Schau dir die URL dieser Website an: Nutzt sie HTTPS oder HTTP?</li>
+        <p *ngIf="isTeacher" class="teacher" >Lösung: https</p>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Quellen</h2>
+      <a href="https://de.ryte.com/wiki/URL/">[2] URL</a>
+      <br>
+      <a href="https://www.cloudflare.com/de-de/learning/ssl/why-is-http-not-secure/">Warum ist HTTP nicht sicher? | HTTP vs. HTTPS</a>
+    </div>
+
+
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="introduction-content" *ngIf="currentStep === 7">
+    <h1>Die Bedeutung der Domain</h1>
+    <h2>Wie lese ich eine URL richtig?</h2>
+    <img src="https://www.eology.de/wp-content/uploads/2020/04/URL-Bestandteile.png" alt="Aufbau einer URL">
+    <p>Quelle: <a href="https://www.eology.de/wiki/url">https://www.eology.de/wiki/url</a></p>
+
+
+    <h2>Was ist eine Domain?</h2>
+    <p>
+
+      Eine Domain ist ein einzigartiger Name, der einer bestimmten Website im Internet gehört.
+      Jede Website hat ihre eigene, einmalige Domain, damit du sie leicht finden kannst. Ein Beispiel für eine Domain wäre "www.beispielseite.com". [4]
+    </p>
+    <p>
+      Betrüger versuchen manchmal, echte Domains nachzuahmen, um dich auf falsche Websites zu locken und so an deine Daten zu gelangen.
+      Deshalb ist es wichtig, immer genau auf den Domainnamen zu achten.
+      Dafür jetzt ein Beispiel.
+    </p>
+
+    <br>
+
+    <h3>Beispiele für echte und gefälschte URLs:</h3>
+    <p><b>Echte URL:</b> https://www.instagram.com/</p>
+    <p><b>Gefälschte URL:</b> https://www.lnstagram.com/ (beachte das kleine „L“ das im Browser wie ein großes "i" aussieht)</p>
+    <p>
+      Funfact:
+      Die URL "www.lnstagram.com" (mit einem kleinen "L" statt einem großen "i") führt tatsächlich zur echten Instagram-Seite.
+      Instagram hat sich diese URL gesichert, um zu verhindern, dass Betrüger sie nutzen können. Dies ist ein cleverer Schutzmechanismus, um dich und andere vor möglichen Phishing-Angriffen zu schützen</p>
+    <p><b>Gefälschte URL:</b> https://www.1nstagram.com/ (beachte die „1“ statt „i“)</p>
+    <p>Es gibt viele Möglichkeiten, wie Betrüger versuchen, dich zu täuschen. Sei immer wachsam!</p>
+
+    <h2>Quellen</h2>
+    <a href="https://www.ionos.de/digitalguide/domains/domaintipps/was-ist-eine-domain/">[4] Was ist eine Domain?</a>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="introduction-content" *ngIf="currentStep === 8">
+    <h1>Übung: Sichere und unsichere Websites erkennen</h1>
+    <p>Wähle aus, auf welche Websites deiner Meinung nach sensible Daten eingegeben werden können. Denke an die vorherigen Tipps! Klicke auf „Überprüfen“, um zu sehen, ob du richtig liegst.</p>
+    <ul>
+      <li *ngFor="let url of urls">
+        <input style="cursor: pointer" type="checkbox" [(ngModel)]="url.checked" /> {{ url.address }}
+      </li>
+    </ul>
+    <p *ngIf="isTeacher" class="teacher">Lösung: 2 Richtig, 3 Richtig, 4 Richtig, 7 Richtig</p>
+    <button (click)="checkAnswers()">Überprüfen</button>
+    <p>{{ feedback }}</p>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!allCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="introduction-content" *ngIf="currentStep === 9">
+    <h1>Cookies</h1>
+    <p>Jeder kennt sie, fast jeder mag sie:</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/2ChocolateChipCookies.jpg" alt="Bild vom Cookie" style="width: 40%;">
+    <p>Quelle: <a href="https://upload.wikimedia.org/wikipedia/commons/f/f1/2ChocolateChipCookies.jpg" target="_blank">Cookie Bild</a></p>
+
+    <h2>Hast du schon mal so eine Einbelndung gesehen: </h2>
+    <img src="https://datenschutz-generator.de/wp-content/uploads/2019/10/cookie-Lufthansa.png" alt="Banner von Cookie-Einblendung">
+    <p>Quelle: <a href="https://datenschutz-generator.de/wp-content/uploads/2019/10/cookie-Lufthansa.png" target="_blank">Abbildung eines Cookie Fensters</a></p>
+
+    <br>
+
+    <h2>Aber warum können Cookies ein Problem sein und was sind Cookies eigentlich?</h2>
+    <p>Schaue dir dazu dieses Video an:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/iyD0vcsCPPE?si=GTE4stkEnXV3jvbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h2>Wichtige Punkte zu Cookies:</h2>
+    <ul>
+      <li>Cookies speichern Informationen über dich, z.B. deine Login-Daten oder deine Präferenzen auf einer Website.</li>
+      <li>Manche Cookies, wie Tracking-Cookies, können verwendet werden, um dein Verhalten im Internet nachzuverfolgen.</li>
+      <li>Es ist wichtig, deine Cookie-Einstellungen zu überprüfen, um deine Privatsphäre zu schützen.</li>
+    </ul>
+
+    <br>
+
+    <h2>Wie kannst du deine Cookie-Einstellungen überprüfen?</h2>
+    <p>Hier ist eine einfache Anleitung, wie du deine Cookie-Einstellungen in den gängigsten Browsern überprüfen und anpassen kannst:</p>
+    <ul>
+      <li><b>Google Chrome:</b> Gehe zu den Einstellungen > Datenschutz und Sicherheit > Website-Einstellungen > Cookies und Websitedaten.</li>
+      <li><b>Mozilla Firefox:</b> Gehe zu den Einstellungen > Datenschutz & Sicherheit > Cookies und Websitedaten.</li>
+      <li><b>Microsoft Edge:</b> Gehe zu den Einstellungen > Website-Berechtigungen > Cookies und Websitedaten.</li>
+    </ul>
+    <p>Du kannst hier festlegen, welche Cookies gespeichert werden dürfen und welche nicht.</p>
+
+    <h2>Teste dein Wissen über Cookies!</h2>
+    <p>Welche der folgenden Aussagen über Cookies ist richtig? (Wähle alle zutreffenden Antworten)</p>
+    <ul>
+      <li *ngFor="let answer of cookieQuizAnswers">
+        <input type="checkbox" [(ngModel)]="answer.selected" /> {{ answer.text }}
+      </li>
+      <p *ngIf="isTeacher" class="teacher">Lösung: 1 Richtig, 2 Richtig</p>
+    </ul>
+    <button (click)="checkCookieQuizAnswers()">Überprüfen</button>
+    <p>{{ cookieQuizFeedback }}</p>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!allCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+
+  <div class="introduction-content" *ngIf="currentStep === 10">
+
+    <h1>Kreuzworträtsel</h1>
+    <button *ngIf="isTeacher" style="background-color: #004d40; color: white" (click)="print()">Hier können Sie das Kreuzworträtsel ausdrucken</button>
+    <p>Löse das Kreuzworträtsel und gib unten das Lösungswort ein</p>
+    <img src="assets/kreuzwort.png" height="498" width="758">
+    <input [(ngModel)]="userSolution" placeholder="Lösungswort eingeben">
+    <p *ngIf="isTeacher" class="teacher">Lösung: CYBERSICHERHEIT</p>
+    <button (click)="checkSolution()">Überprüfen</button>
+    <div *ngIf="feedback">{{ feedback }}</div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!allCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="introduction-content" *ngIf="currentStep === 11">
+    <h1>Zusammenfassung und Reflexion</h1>
+
+    <h2>Rückblick auf die Kurseinheit</h2>
+    <p>In den letzten 90 Minuten hast du viel über Internetsicherheit gelernt. Du weißt jetzt, wie du dich im Netz sicherer bewegst und worauf du achten musst.</p>
+
+    <h2>Was hast du gelernt?</h2>
+    <ul>
+      <li>Du kennst den Unterschied zwischen HTTP und HTTPS und weißt, wie es dir hilft sichere Websites zu erkennen.</li>
+      <li>Du verstehst, was Cookies sind, welche Arten es gibt, und wie du deine Cookie-Einstellungen anpassen kannst.</li>
+      <li>Du weißt, wie du dich vor Malware, Phishing und anderen Cyberbedrohungen schützt.</li>
+      <li>Du hast gelernt, wie du gefälschte URLs erkennst und wie du sicher mit deinen Daten umgehst.</li>
+      <li>Du hast dein Wissen in einem Kreuzworträtsel getestet und dabei hoffentlich Spaß gehabt!</li>
+    </ul>
+
+    <h2>Was kannst du jetzt?</h2>
+    <p>Dank deines neuen Wissens kannst du nun:</p>
+    <ul>
+      <li>Sicher im Internet surfen und Risiken frühzeitig erkennen.</li>
+      <li>Deine persönlichen Daten schützen und bewusst entscheiden, welche Cookies du akzeptierst.</li>
+      <li>Gefahren wie Phishing-Angriffe und Malware erkennen und vermeiden.</li>
+      <li>Selbstbewusst durch die digitale Welt navigieren.</li>
+    </ul>
+
+    <h2>Reflexion</h2>
+    <p>Denke darüber nach, wie du dieses Wissen in deinem täglichen Leben anwenden kannst:</p>
+    <ul>
+      <li>Welche Websites besuchst du regelmäßig, und wie kannst du dort sicherer surfen?</li>
+      <li>Hast du deine Cookie-Einstellungen schon einmal angepasst? Wenn nicht, probiere es doch gleich aus!</li>
+      <li>Wie wirst du künftig mit verdächtigen E-Mails oder Links umgehen?</li>
+    </ul>
+
+    <p>Sei stolz auf das, was du in dieser kurzen Zeit gelernt hast, und nutze dein Wissen, um sicher und verantwortungsbewusst im Internet unterwegs zu sein!</p>
+  </div>
+
+
+  <app-home-button></app-home-button>
+</div>
+

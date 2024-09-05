@@ -1,0 +1,262 @@
+<div class="smartphone-container">
+  <div class="smartphone-content" *ngIf="currentStep === 1">
+    <h1>Einführung in den sicheren Umgang mit Smartphones</h1>
+    <h2>Warum ist die Sicherheit bei der Smartphone-Nutzung wichtig?</h2>
+    <p>
+      Dein Smartphone ist wie ein kleiner Computer, den du überall mit hinnehmen kannst. Es speichert viele persönliche Informationen, wie deine Fotos, Nachrichten und Apps. Deshalb ist es wichtig, dein Smartphone sicher zu nutzen, damit niemand deine Daten ohne deine Erlaubnis verwenden kann.
+    </p>
+    <br>
+    <h2>Was wirst du in dieser Einheit lernen?</h2>
+    <ul>
+      <li>Du verstehst, welche Gefahren es gibt, wenn du dein Smartphone benutzt, zum Beispiel durch Apps, die deinen Standort verfolgen oder deine Daten weitergeben.</li>
+      <li>Du weißt, wie du dein Smartphone sicherer machen kannst, zum Beispiel indem du die Standortdienste ausschaltest und genau prüfst, welche Apps welche Berechtigungen haben.</li>
+      <li>Du erkennst, wie die Nutzung deines Smartphones deine Privatsphäre und dein Wohlbefinden beeinflussen kann, und überlegst dir, wie du dein Verhalten verbessern kannst, um dich besser zu schützen.</li>
+    </ul>
+      <h2>Diskussion</h2>
+      <p>Tauscht euch aus:
+        <ul>
+      <li>Wie oft benutzt du dein Smartphone jeden Tag?</li>
+      <li>Welche Apps verwendest du am meisten?</li>
+      <li> Wie achtet ihr darauf, dass eure Smartphones sicher sind?</li>
+    </ul>
+    <div class="button-container">
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="smartphone-content" *ngIf="currentStep === 2">
+    <h2>Risiken bei der Smartphone-Nutzung</h2>
+    <p>Dein Smartphone kann viel mehr über dich verraten, als du denkst. Wenn du nicht aufpasst, können deine persönlichen Daten in falsche Hände geraten. Lass uns einige der größten Risiken ansehen:</p>
+    <ul>
+      <li><strong>App-Berechtigungen:</strong> Viele Apps fragen nach Zugriffen, die sie vielleicht gar nicht benötigen, wie zum Beispiel auf deine Kontakte oder deinen Standort. Überlege dir immer genau, welche Berechtigungen eine App wirklich braucht.</li>
+      <img src="https://i.computer-bild.de/imgs/7/7/9/4/4/8/5/Android-App-Berechtigungen-1024x576-df083e9487fd7d79.jpg?impolicy=full_content" alt="Bild mit einem Smartphone auf dem Berechtigungen dargestellt werden">
+      <p>Quelle: <a href="https://i.computer-bild.de/imgs/7/7/9/4/4/8/5/Android-App-Berechtigungen-1024x576-df083e9487fd7d79.jpg?impolicy=full_content">Android-Apps: Berechtigungen und ihre Bedeutung</a></p>
+      <li><strong>Standortfreigaben:</strong> Wenn du ständig deinen Standort teilst, wissen Apps und andere Nutzer immer, wo du bist. Das kann zu Problemen führen, wenn diese Informationen missbraucht werden.</li>
+      <li><strong>Datenweitergabe:</strong> Manche Apps und Websites geben deine Daten an Dritte weiter, ohne dass du es weißt. Achte darauf, wie und wo du deine persönlichen Informationen teilst.</li>
+    </ul>
+
+    <h2>Diskussion und Fallbeispiele</h2>
+    <p>Überlege: Hast du schon einmal einer App eine Berechtigung gegeben, ohne genau zu wissen, wofür sie diese benötigt? Oder hast du deinen Standort dauerhaft freigegeben, ohne darüber nachzudenken?</p>
+    <p>Diskutiere mit deinen Mitschülern: Welche dieser Risiken ist dir schon einmal begegnet? Wie hast du darauf reagiert? Was könntest du in Zukunft besser machen?</p>
+
+    <h3>Fallbeispiel 1: Die unsichere App</h3>
+    <p>Ein Schüler hat eine App heruntergeladen, die lustige Filter für Fotos bietet. Die App fordert Zugriff auf die Kamera und die Galerie, aber auch auf die Kontakte und den Standort. Später stellt sich heraus, dass die App die Kontakte und den Standort an Werbefirmen weitergegeben hat. Was hätte der Schüler anders machen können?</p>
+
+    <h3>Fallbeispiel 2: Standort immer an</h3>
+    <p>Eine Schülerin hat ihren Standort in einer Social-Media-App dauerhaft freigegeben. Ein Fremder hat durch den geteilten Standort herausgefunden, wo sie sich oft aufhält, und begann ihr Nachrichten zu schicken. Wie hätte sie diese Situation vermeiden können?</p>
+
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="smartphone-content" *ngIf="currentStep === 3">
+    <h2>Praktische Übung: Datenschutz und Sicherheitseinstellungen</h2>
+    <p>Jetzt, da du die Risiken kennst, ist es Zeit, dein Smartphone sicherer zu machen. Folge diesen Schritten, um deine Datenschutz- und Sicherheitseinstellungen anzupassen:</p>
+
+    <h3>Anleitung für Android</h3>
+    <ul>
+      <li>Öffne die <strong>Einstellungen</strong> auf deinem Android-Smartphone.</li>
+      <li>Gehe zu <strong>Apps</strong> oder <strong>Anwendungsmanager</strong>.</li>
+      <li>Wähle eine App aus und überprüfe die Berechtigungen.</li>
+      <li>Deaktiviere unnötige Berechtigungen, wie den Zugriff auf deine Kamera oder deinen Standort, wenn diese nicht notwendig sind.</li>
+      <li>Gehe zurück zu den <strong>Einstellungen</strong> und dann zu <strong>Standort</strong>.</li>
+      <li>Schalte den Standortzugriff aus, wenn du ihn nicht benötigst, oder wähle, dass nur bestimmte Apps darauf zugreifen dürfen.</li>
+    </ul>
+
+    <h3>Anleitung für Apple (iPhone)</h3>
+    <ul>
+      <li>Öffne die <strong>Einstellungen</strong> auf deinem iPhone.</li>
+      <li>Gehe zu <strong>Datenschutz</strong> und dann zu <strong>Ortungsdienste</strong>.</li>
+      <li>Überprüfe, welche Apps auf deinen Standort zugreifen dürfen, und schränke den Zugriff ein, wenn möglich.</li>
+      <li>Gehe zurück zu <strong>Datenschutz</strong> und dann zu <strong>Berechtigungen</strong>.</li>
+      <li>Überprüfe die App-Berechtigungen und deaktiviere unnötige Zugriffe, wie auf deine Fotos oder das Mikrofon.</li>
+    </ul>
+    <br>
+
+    <h3>Quiz: Wie sicher ist dein Smartphone?</h3>
+    <p>Nachdem du deine Einstellungen angepasst hast, teste dein Wissen mit diesem Quiz!</p>
+
+    <form (submit)="checkQuiz($event)">
+      <div class="quiz-question">
+        <h2>Frage 1: Warum sollte man bei der Installation einer App genau prüfen, welche Berechtigungen sie benötigt?</h2>
+        <ul>
+          <li>
+            <input type="radio" id="q1a" name="q1" value="a">
+            <label for="q1a">Weil es egal ist, welche Berechtigungen eine App hat.</label>
+          </li>
+          <li>
+            <input type="radio" id="q1b" name="q1" value="b">
+            <label *ngIf="!isTeacher" for="q1b">Weil die App auf deine persönlichen Daten zugreifen könnte, die sie nicht benötigt.</label>
+            <label *ngIf="isTeacher" for="q1b" class="teacher">Weil die App auf deine persönlichen Daten zugreifen könnte, die sie nicht benötigt.</label>
+
+          </li>
+          <li>
+            <input type="radio" id="q1c" name="q1" value="c">
+            <label for="q1c">Weil jede App so viele Berechtigungen wie möglich benötigt, um gut zu funktionieren.</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="quiz-question">
+        <h2>Frage 2: Was kann passieren, wenn du deinen Standort in sozialen Medien dauerhaft teilst?</h2>
+        <ul>
+          <li>
+            <input type="radio" id="q2a" name="q2" value="a">
+            <label for="q2a">Nichts, es ist völlig sicher.</label>
+          </li>
+          <li>
+            <input type="radio" id="q2b" name="q2" value="b">
+            <label *ngIf="!isTeacher" for="q2b">Fremde könnten herausfinden, wo du dich oft aufhältst.</label>
+            <label *ngIf="isTeacher" for="q2b" class="teacher">Fremde könnten herausfinden, wo du dich oft aufhältst.</label>
+          </li>
+          <li>
+            <input type="radio" id="q2c" name="q2" value="c">
+            <label for="q2c">Du kannst dadurch mehr Freunde finden.</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="quiz-question">
+        <h2>Frage 3: Warum solltest du darauf achten, welche Daten Apps an Dritte weitergeben?</h2>
+        <ul>
+          <li>
+            <input type="radio" id="q3a" name="q3" value="a">
+            <label *ngIf="!isTeacher" for="q3a">Weil deine Daten sonst in die falschen Hände geraten könnten.</label>
+            <label *ngIf="isTeacher" class="teacher" for="q3a">Weil deine Daten sonst in die falschen Hände geraten könnten.</label>
+          </li>
+          <li>
+            <input type="radio" id="q3b" name="q3" value="b">
+            <label for="q3b">Weil das völlig unwichtig ist.</label>
+          </li>
+          <li>
+            <input type="radio" id="q3c" name="q3" value="c">
+            <label for="q3c">Weil du dadurch Werbung bekommst, die dir gefällt.</label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="button-container">
+        <button class="next-button" type="submit">Quiz auswerten</button>
+      </div>
+    </form>
+
+    <div *ngIf="quizResult">
+      <h2>{{quizResultMessage}}</h2>
+      <p>{{quizExplanation}}</p>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" [disabled]="!isCorrect" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="smartphone-content" *ngIf="currentStep === 4">
+    <h2>WLAN, Wi-Fi und öffentliche Netzwerke</h2>
+    <p>WLAN (Wi-Fi) ist eine praktische Möglichkeit, kabellos mit dem Internet verbunden zu sein. Besonders an öffentlichen Orten wie Cafés, Bibliotheken oder Bahnhöfen nutzen viele Menschen öffentliches WLAN. Doch dabei gibt es auch einige Risiken, die du kennen solltest. [1]</p>
+
+    <h3>Warum öffentliche Netzwerke riskant sein können</h3>
+    <ul>
+      <li><strong>Daten können mitgelesen werden:</strong> Wenn du dich mit einem öffentlichen WLAN verbindest, könnten andere Personen im gleichen Netzwerk sehen, welche Webseiten du besuchst oder welche Daten du sendest.</li>
+      <li><strong>Gefälschte Netzwerke:</strong> Betrüger können Netzwerke einrichten, die wie echte öffentliche WLANs aussehen. Wenn du dich mit einem solchen Netzwerk verbindest, könnten deine Daten gestohlen werden.</li>
+    </ul>
+
+    <h3>Praktische Aufgabe: Sicheres Surfen im öffentlichen WLAN</h3>
+    <p>Schau dich um und finde heraus, welche WLAN-Netzwerke in deiner Umgebung verfügbar sind. Überlege dir bei jedem Netzwerk, ob du weißt, wem es gehört und ob du ihm vertrauen würdest. Diskutiere deine Überlegungen mit einem Mitschüler.</p>
+
+    <p>Diskutiere mit deinen Mitschülern: Wann würdest du ein öffentliches WLAN nutzen und wann würdest du es vermeiden? Was könntest du tun, um sicherer zu surfen, wenn du es nutzen musst?</p>
+    <br>
+    <p>Quelle:</p>
+    <p>[1] https://it-service.network/it-lexikon/wlan/</p>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="smartphone-content" *ngIf="currentStep === 5">
+    <h2>Reflexion und Diskussion über digitales Wohlbefinden</h2>
+    <p>Du hast sicherlich schon bemerkt, dass dein Smartphone viel Zeit in Anspruch nehmen kann. Doch hast du dir schon einmal überlegt, wie das deine Stimmung oder dein Wohlbefinden beeinflusst?</p>
+
+    <p>
+      Nimm dir Zeit, um über diese Fragen nachzudenken und notiere deine Gedanken. Diskutiere dann in kleinen Gruppen oder mit einem Partner, was fällt euch auf?
+    </p>
+
+    <h2>Bildschirmzeit</h2>
+    <p>
+      Verbringst du viel Zeit vor dem Bildschirm? Zu viel Bildschirmzeit kann dazu führen, dass du dich müde und gestresst fühlst. Es ist wichtig, eine Balance zu finden und auch mal offline zu sein. Überlege:
+    </p>
+
+    <ul>
+      <li>Wie viel Zeit verbringst du täglich an deinem Smartphone?</li>
+      <li>Wie fühlst du dich nach längeren Zeiten vor dem Bildschirm?</li>
+      <li>Wie könntest du deine Bildschirmzeit begrenzen?</li>
+    </ul>
+    <img style="width: 20%" src="https://cdsassets.apple.com/live/7WUAS350/images/apple-id/locale/de-de/ios-17-iphone-14-pro-settings-screen-time.png" alt="Bildschirmzeit">
+    <p>Bildquelle: <a href="https://cdsassets.apple.com/live/7WUAS350/images/apple-id/locale/de-de/ios-17-iphone-14-pro-settings-screen-time.png">Apple</a></p>
+    <p>
+      Ein hilfreiches Werkzeug dafür sind die Einstellungen in deinem Smartphone, die dir zeigen, wie viel Zeit du mit welchen Apps verbringst. Schaue auch dort mal nach!
+    </p>
+
+    <h2>Umgang mit ständiger Erreichbarkeit</h2>
+    <p>
+      Heutzutage sind wir fast immer erreichbar, aber das kann auch stressig sein. Ständige Nachrichten, Benachrichtigungen und Anrufe können dich ablenken und unter Druck setzen. Denk darüber nach:
+    </p>
+    <ul>
+      <li>Fühlst du dich manchmal überfordert von den vielen Nachrichten und Benachrichtigungen?</li>
+      <li>Wie gehst du mit der ständigen Erreichbarkeit um? Hast du feste Zeiten, in denen du dein Smartphone beiseitelegst?</li>
+      <li>Was könntest du tun, um deine Erreichbarkeit zu kontrollieren, damit du dich wohler fühlst?</li>
+    </ul>
+
+    <h2>Auswirkungen auf das soziale Leben</h2>
+    <p>
+      Smartphones können unser soziales Leben bereichern, aber auch belasten. Überlege:
+    </p>
+    <ul>
+      <li>Wie beeinflusst dein Smartphone dein Verhältnis zu Freunden und Familie?</li>
+      <li>Verbringst du genug Zeit im echten Leben mit deinen Freunden und deiner Familie, oder lenkt dich dein Smartphone oft ab?</li>
+      <li>Wie könntest du deine Smartphone-Nutzung anpassen, um deine Beziehungen zu verbessern?</li>
+    </ul>
+
+    <h2>Beantworte dir diese Fragen selbst</h2>
+    <ul>
+      <li>Welche der genannten Punkte betrifft dich am meisten, betrifft dich überhaupt etwas?</li>
+      <li>Fällt es dir bei anderen auf oder wurdest du schon mal drauf angesprochen?</li>
+      <li>Welche Veränderungen möchtest du in deinem Alltag vornehmen, um dein digitales Wohlbefinden zu verbessern?</li>
+      <li>Wie können dir deine Freunde oder Familie dabei helfen?</li>
+    </ul>
+
+    <p>
+      Schreibe abschließend deine Gedanken in ein digitales Tagebuch oder auf ein Blatt Papier:
+    </p>
+    <ul>
+      <li>Was wirst du in Zukunft anders machen, um dein digitales Wohlbefinden zu steigern?</li>
+      <li>Welche konkreten Schritte wirst du unternehmen?</li>
+      <li>Wie fühlst du dich dabei?</li>
+    </ul>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <div class="smartphone-content" *ngIf="currentStep === 6">
+    <h2>Abschluss und Reflexion</h2>
+    <p>
+      Du hast in diesem Modul einiges über den sicheren Umgang mit deinem Smartphone gelernt und gleichzeitig auch dein Smartphone nutzen hinterfragt.
+      Jetzt ist es Zeit, diese in deinem Alltag anzuwenden.
+    </p>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+    </div>
+  </div>
+
+  <app-home-button></app-home-button>
+</div>
+

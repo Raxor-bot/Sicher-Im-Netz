@@ -1,0 +1,223 @@
+<div class="social-container">
+  <div class="social-content" *ngIf="currentStep === 1">
+      <h1>Soziale Medien – Chancen und Risiken</h1>
+      <h2>Einführung</h2>
+      <p>
+        Willkommen zu diesem Modul über soziale Medien! In diesem Modul wirst du lernen, welche Chancen und Risiken soziale Medien bieten. Du wirst die verschiedenen Aspekte wie Fake News, Sucht, Veränderung der Realitätsvorstellung und Cybermobbing untersuchen.
+      </p>
+      <h2>Was wirst du lernen?</h2>
+      <ul>
+        <li>Du verstehst die positiven und negativen Aspekte der Nutzung sozialer Medien.</li>
+        <li>Du kannst Maßnahmen zur Erkennung und Vermeidung von Fake News benennen.</li>
+        <li>Du erkennst die potenziellen Risiken von Social Media wie Sucht, Cybermobbing und Veränderung der Realitätsvorstellung.</li>
+      </ul>
+      <div class="button-container">
+        <button class="next-button" (click)="goToNext()">Weiter</button>
+      </div>
+    </div>
+
+  <div class="social-content" *ngIf="currentStep === 2">
+    <h1>Gruppenarbeit: Soziale Medien und ihre Auswirkungen</h1>
+
+    <h2>Deine Aufgabe</h2>
+    <p>
+      Du wirst gleich einem Raum beitreten, in dem du zusammen mit deinen Mitschülern an einem wichtigen Thema zu sozialen Medien arbeitest. Euer Ziel ist es, das Thema zu verstehen und es später den anderen Schülern vorzustellen.
+    </p>
+
+    <h2>Themenauswahl</h2>
+    <p>
+      Dein Kursleiter wird euch gleich ein Thema zuteilen. Hier sind einige der möglichen Themen:
+    </p>
+    <ul>
+      <li>Fakenews</li>
+      <li>Sucht</li>
+      <li>Veränderung der Realitätsvorstellung</li>
+      <li>Cybermobbing</li>
+      <li>Trends</li>
+    </ul>
+
+    <h2>So geht's weiter</h2>
+    <p>
+      Der Kursleiter wird einen Raum für euch erstellen. Ihr tretet diesem Raum bei, indem ihr den Namen des Raums eingebt. Sobald alle in eurem Raum sind, könnt ihr loslegen!
+    </p>
+
+    <div *ngIf="isTeacher">
+      <h2>Raum erstellen</h2>
+      <form (submit)="createRoom($event)">
+        <label for="createRoomName">Raumname:</label>
+        <input type="text" id="createRoomName" [(ngModel)]="roomName1" name="createRoomName" required>
+        <button type="submit">Raum erstellen</button>
+      </form>
+      <div *ngIf="roomId">
+        <p>Raum ID: {{ roomName1 }}</p>
+        <p>Teile diese ID mit deinen Schülern, damit sie dem Raum beitreten können.</p>
+      </div>
+    </div>
+
+    <!-- Abschnitt für Schüler -->
+    <div *ngIf="!isTeacher">
+      <h2>Raum beitreten</h2>
+      <form (submit)="joinRoom($event)">
+        <label for="joinRoomName">Raumname:</label>
+        <input type="text" id="joinRoomName" [(ngModel)]="roomName2" name="joinRoomName" required>
+        <button type="submit">Beitreten</button>
+      </form>
+      <div *ngIf="roomId">
+        <p>Du bist dem Raum beigetreten: {{ roomName2 }}</p>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
+  </div>
+
+  <!-- Schritt 4: Teilnehmer im Raum -->
+  <div class="social-content" *ngIf="currentStep === 3">
+    <h1>Teilnehmer im Raum</h1>
+    <div *ngIf="roomId">
+      <p>RaumID: {{ roomName1 }}</p>
+      <ul>
+        <li *ngFor="let student of students">{{ student }}</li>
+      </ul>
+      <div *ngIf="isTeacher">
+        <button (click)="startSession()">Start</button>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+    </div>
+  </div>
+
+  <!-- Schritt 5: Soziale Medien Themen -->
+  <div class="social-content" *ngIf="currentStep === 4">
+    <div *ngIf="assignedProblem === 'Fakenews'">
+      <h1>Gruppenarbeit: Fakenews erkennen und vermeiden</h1>
+      <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Fakenews“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+      <h2>Schritt 1: Grundlagen verstehen</h2>
+      <p>Lest gemeinsam die folgenden Informationen über Fakenews und besprecht, was ihr dabei gelernt habt. Die angegebene Quelle ist ein Ausgangspunkt, aber ihr könnt auch eigene Recherchen durchführen:</p>
+      <a href="https://www.ins-netz-gehen.de/social-media/fake-news-falschinformationen-in-sozialen-medien-durchschauen/" target="_blank">Fakt oder Fake – So durchschaust du Falschinformationen in sozialen Medien</a>
+      <ul>
+        <li>Was sind Fakenews und wie verbreiten sie sich?</li>
+        <li>Wie erkenne ich Fakenews und wie kann ich sie vermeiden?</li>
+        <li>Welche Arten von Fakenews gibt es?</li>
+        <li>Welche Auswirkungen haben Fakenews auf die Gesellschaft?</li>
+      </ul>
+
+      <h2>Schritt 2: Diskutieren und vertiefen</h2>
+      <p>Diskutiert in der Gruppe, wie ihr euch vor Fakenews schützen könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+
+      <h2>Schritt 3: Präsentation vorbereiten</h2>
+      <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Fakenews gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+    </div>
+
+    <div *ngIf="assignedProblem === 'Sucht'">
+      <h1>Gruppenarbeit: Suchtpotenzial von sozialen Medien</h1>
+      <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Sucht“ im Zusammenhang mit sozialen Medien zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+      <h2>Schritt 1: Grundlagen verstehen</h2>
+      <p>Lest gemeinsam die folgenden Informationen über die Suchtgefahr von sozialen Medien und besprecht, was ihr dabei gelernt habt. Die angegebene Quelle ist ein Ausgangspunkt, aber ihr könnt auch eigene Recherchen durchführen:</p>
+      <a href="https://www.ins-netz-gehen.de/social-media/abhaengigkeit/" target="_blank">Zeitfresser Social Media – Bin ich zu lang online?</a>
+      <ul>
+        <li>Warum können soziale Medien süchtig machen?</li>
+        <li>Welche Maßnahmen haben Plattformen ergriffen, um Sucht zu verhindern?</li>
+        <li>Was kannst du selbst tun, um deine Nutzung von sozialen Medien zu kontrollieren?</li>
+      </ul>
+
+      <h2>Schritt 2: Diskutieren und vertiefen</h2>
+      <p>Diskutiert in der Gruppe, welche Maßnahmen gegen Suchtgefahren ergriffen werden können und wie ihr eure Nutzung besser kontrollieren könnt. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+
+      <h2>Schritt 3: Präsentation vorbereiten</h2>
+      <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Suchtgefahr in sozialen Medien gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+    </div>
+
+    <!-- Weitere Themen analog zu den obigen -->
+
+    <div *ngIf="assignedProblem === 'Realitaetsvorstellung'">
+      <h1>Gruppenarbeit: Veränderung der Realitätsvorstellung</h1>
+      <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Veränderung der Realitätsvorstellung durch soziale Medien“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+      <h2>Schritt 1: Grundlagen verstehen</h2>
+      <p>Lest gemeinsam die folgenden Informationen und besprecht, was ihr dabei gelernt habt. Die angegebene Quelle ist ein Ausgangspunkt, aber ihr könnt auch eigene Recherchen durchführen:</p>
+      <a href="https://www.ins-netz-gehen.de/social-media/auswirkungen-und-selbstzweifel/" target="_blank">Be yourself – So bleibst du dir auf Social Media treu</a>
+      <ul>
+        <li>Wie beeinflussen soziale Medien die Wahrnehmung von Realität und das Selbstbild?</li>
+        <li>Welche positiven und negativen Auswirkungen können daraus resultieren?</li>
+        <li>Wie kannst du erkennen, ob dein Bild von der Realität durch soziale Medien verzerrt ist?</li>
+      </ul>
+
+      <h2>Schritt 2: Diskutieren und vertiefen</h2>
+      <p>Diskutiert in der Gruppe, welche Maßnahmen man ergreifen kann, um eine gesunde Wahrnehmung der Realität zu bewahren. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+
+      <h2>Schritt 3: Präsentation vorbereiten</h2>
+      <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über die Veränderung der Realitätsvorstellung durch soziale Medien gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+    </div>
+
+    <div *ngIf="assignedProblem === 'Cybermobbing'">
+      <h1>Gruppenarbeit: Cybermobbing erkennen und verhindern</h1>
+      <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Cybermobbing“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+      <h2>Schritt 1: Grundlagen verstehen</h2>
+      <p>Lest gemeinsam die folgenden Informationen über Cybermobbing und besprecht, was ihr dabei gelernt habt. Die angegebene Quelle ist ein Ausgangspunkt, aber ihr könnt auch eigene Recherchen durchführen:</p>
+      <a href="https://www.klicksafe.de/cybermobbing" target="_blank">Cybermobbing - was tun? Hilfe und Tipps</a>
+      <ul>
+        <li>Was versteht man unter Cybermobbing und wie unterscheidet es sich von traditionellem Mobbing?</li>
+        <li>Welche Auswirkungen kann Cybermobbing auf die Betroffenen haben?</li>
+        <li>Welche Rolle spielen soziale Medien beim Cybermobbing?</li>
+      </ul>
+
+      <h2>Schritt 2: Diskutieren und vertiefen</h2>
+      <p>Diskutiert in der Gruppe, wie man Cybermobbing verhindern kann und welche Schritte unternommen werden sollten, wenn jemand betroffen ist. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+
+      <h2>Schritt 3: Präsentation vorbereiten</h2>
+      <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Cybermobbing gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+    </div>
+
+    <div *ngIf="assignedProblem === 'Trends'">
+      <h1>Gruppenarbeit: Trends und Challenges in sozialen Medien</h1>
+      <p>Ihr arbeitet jetzt in kleinen Gruppen zusammen, um das Thema „Trends und Challenges in sozialen Medien“ zu erforschen. Euer Ziel ist es, das Thema so gut zu verstehen, dass ihr es später der Klasse vorstellen könnt.</p>
+
+      <h2>Schritt 1: Grundlagen verstehen</h2>
+      <p>Lest gemeinsam die folgenden Informationen über Trends und Challenges in sozialen Medien und besprecht, was ihr dabei gelernt habt. Die angegebene Quelle ist ein Ausgangspunkt, aber ihr könnt auch eigene Recherchen durchführen:</p>
+      <a href="https://www.ins-netz-gehen.de/social-media/social-media-challenges-zwischen-spass-und-gefahr/" target="_blank">Social Media Challenges – zwischen Spaß und Gefahr</a>
+      <ul>
+        <li>Was sind typische Trends und Challenges in sozialen Medien?</li>
+        <li>Welche Gefahren und Risiken können von solchen Trends ausgehen?</li>
+        <li>Wie kann man verantwortungsvoll mit solchen Trends umgehen?</li>
+      </ul>
+
+      <h2>Schritt 2: Diskutieren und vertiefen</h2>
+      <p>Diskutiert in der Gruppe, wie man Risiken durch Trends und Challenges in sozialen Medien minimieren kann. Notiert euch die wichtigsten Punkte, die ihr später vorstellen möchtet.</p>
+
+      <h2>Schritt 3: Präsentation vorbereiten</h2>
+      <p>Bereitet eine kurze Präsentation vor, in der ihr eurer Klasse erklärt, was ihr über Trends und Challenges in sozialen Medien gelernt habt. Teilt euch die Aufgaben in der Gruppe auf: Wer spricht? Wer macht die Notizen?</p>
+    </div>
+
+
+    <p>Nachdem ihr alle durch seid, könnt ihr auf weiter klicken.</p>
+    <button class="next-button" (click)="goToNext()">Weiter</button>
+  </div>
+
+  <div class="social-content" *ngIf="currentStep === 5">
+    <h2>Zusammenfassung</h2>
+    <p>
+      In diesem Modul hast du die vielfältigen Aspekte sozialer Medien kennengelernt. Gemeinsam mit deinen Mitschülern hast du die positiven und negativen Seiten der Nutzung von Plattformen wie Instagram, Facebook und TikTok untersucht.
+    </p>
+    <p>
+      Du hast gelernt, wie Fake News entstehen und verbreitet werden, und wie man sie erkennen kann. Du weißt nun, dass soziale Medien süchtig machen können und hast Strategien erarbeitet, um deine Nutzung zu kontrollieren. Du hast auch die möglichen Veränderungen der Realitätsvorstellung durch soziale Medien reflektiert und verstanden, wie Cybermobbing funktioniert und wie man sich dagegen wehren kann. Zudem hast du dich mit Trends und Challenges auseinandergesetzt, die oft harmlos erscheinen, aber auch gefährliche Konsequenzen haben können.
+    </p>
+    <p>
+      Insgesamt hast du ein besseres Verständnis dafür entwickelt, wie soziale Medien dich und andere beeinflussen können. Nutze dieses Wissen, um verantwortungsvoll mit diesen Plattformen umzugehen und auch andere auf mögliche Risiken aufmerksam zu machen.
+    </p>
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+    </div>
+  </div>
+
+
+
+<app-home-button></app-home-button>
+</div>
