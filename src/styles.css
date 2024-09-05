@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+/* Setzt den gesamten Bildschirm für den Container */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif; /* Neue Schriftart */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #e0f7fa, rgba(0, 161, 142, 0.56)); /* Farbverlauf von Hellblau zu etwas dunklerem Blau */
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.binary-animation {
+  position: absolute;
+  white-space: nowrap;
+  color: rgba(0, 150, 136, 0.5);
+  font-size: 2em;
+  animation: fly 10s linear infinite, fadeOut 10s forwards;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(100%);
+    top: 0%;
+  }
+  100% {
+    transform: translateX(-100%);
+    top: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+
