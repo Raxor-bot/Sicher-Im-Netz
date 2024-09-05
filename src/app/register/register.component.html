@@ -1,0 +1,17 @@
+<div class="register-container">
+  <div class="register-content">
+  <h1>Registrierung</h1>
+  <form (submit)="registerTeacher($event)">
+    <label for="teacherName">Name:</label>
+    <input type="text" id="teacherName" [(ngModel)]="teacherName" name="teacherName" required>
+
+    <label for="teacherPassword">Passwort:</label>
+    <input type="password" id="teacherPassword" [(ngModel)]="teacherPassword" name="teacherPassword" required>
+
+    <button type="submit">Registrieren</button>
+  </form>
+  <p *ngIf="isRegistered">Erfolgreich regestriert <a href="/">Zur Startseite</a></p>
+
+  <app-home-button></app-home-button>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 10px 120px 120px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.course-list, .settings-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-inline-start: 0;
+}
+
+.course-item, .settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-item button {
+  margin-left: 10px;
+}
+
+.course-name {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.add-button, .home-button, .new-entry-button, .select-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover, .home-button:hover, .new-entry-button:hover {
+  background-color: #218838;
+}
+
+.remove-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px; /* Ensures consistent spacing */
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.home-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new-entry-button {
+  background-color: #28a745;
+  margin-bottom: 20px;
+}
+
+.new-entry-button:hover {
+  background-color: #218838;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-group .remove-button, .button-group .select-button {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-item .course-name {
+  flex: 2;
+}
+
+.settings-item .button-group {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+}

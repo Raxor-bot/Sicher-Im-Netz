@@ -1,0 +1,32 @@
+<div class="home-container">
+  <header class="header">
+    <h1>Willkommen zum Kurs „Sicher im Netz“</h1>
+    <div *ngIf="isLogin">
+      <p>Willkommen, {{ username }}!</p>
+      <p *ngIf="isTeacher">Sie sind als Lehrer angemeldet.</p>
+      <p *ngIf="!isTeacher">Du bist als Schüler angemeldet.</p>
+      <button *ngIf="isTeacher" class="button settings-button" (click)="navigateToSettings()">Hier Kurse anlegen</button>
+    </div>
+    <button class="button logout-button" *ngIf="isLogin" (click)="logout()">Logout</button>
+  </header>
+
+  <div *ngIf="!isLogin">
+    <h2>Wenn du der Kursleiter bist und noch kein Konto hast, registrierst du dich hier:</h2>
+    <a [routerLink]="['/password', 'kurs/register']" class="start-button">Registrieren</a>
+    <h2>Wenn du bereits registriert bist oder deine Anmeldedaten erhalten hast, meldest du dich hier an:</h2>
+    <a [routerLink]="['kurs/login']" class="start-button">Anmelden</a>
+  </div>
+
+  <section class="course-overview" *ngIf="isLogin">
+    <p>Dieser Kurs hilft dir, sicher und verantwortungsvoll in der digitalen Welt zu agieren.</p>
+
+    <h2>Kursübersicht</h2>
+    <div class="course-cards">
+      <div class="course-card" *ngFor="let course of courses">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <a [routerLink]="[course.route]" class="start-button">Starten</a>
+      </div>
+    </div>
+  </section>
+</div>

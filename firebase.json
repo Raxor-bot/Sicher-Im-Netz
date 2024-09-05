@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/sicher-im-netz/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

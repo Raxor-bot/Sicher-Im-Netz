@@ -1,0 +1,18 @@
+<div class="login-container">
+  <div class="login-content">
+  <h1>Anmeldung</h1>
+  <form (submit)="login($event)">
+    <label for="username">Benutzername:</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    <label for="rememberMe">
+      <input type="checkbox" id="rememberMe" [(ngModel)]="rememberMe" name="rememberMe">
+      Angemeldet bleiben
+    </label>
+    <button type="submit">Anmelden</button>
+    <div id="error"></div>
+  </form>
+  <app-home-button></app-home-button>
+  </div>
+</div>

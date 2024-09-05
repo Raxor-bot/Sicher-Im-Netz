@@ -1,0 +1,40 @@
+<div class="settings-container">
+  <h1>Kursverwaltung</h1>
+
+  <div *ngIf="showCourseManagement">
+    <button class="new-entry-button" (click)="showAddCourseForm = !showAddCourseForm">+ Neuer Kurs</button>
+
+    <div *ngIf="showAddCourseForm" class="form-container">
+      <input type="text" [(ngModel)]="newCourse.name" placeholder="Kursname">
+      <button class="add-button" (click)="addCourse()">Hinzufügen</button>
+    </div>
+
+    <div class="course-list">
+      <div *ngFor="let course of courses" class="course-item">
+        <span class="course-name">{{ course.name }}</span>
+        <div class="button-group">
+          <button class="remove-button" (click)="removeCourse(course)">Kurs Entfernen</button>
+          <button class="select-button" (click)="selectCourse(course)">Nutzer Bearbeiten</button>
+        </div>
+      </div>
+    </div>
+    <app-home-button></app-home-button>
+  </div>
+
+  <div *ngIf="!showCourseManagement">
+    <button class="new-entry-button" (click)="showAddUserForm = !showAddUserForm">+ Neuer Eintrag</button>
+
+    <div *ngIf="showAddUserForm" class="form-container">
+      <input type="text" [(ngModel)]="newUser.username" placeholder="Benutzername">
+      <button class="add-button" (click)="addUser()">Hinzufügen</button>
+    </div>
+
+    <div class="settings-list">
+      <div *ngFor="let user of filteredUsers" class="settings-item">
+        <span>{{ user.username }} - Passwort: {{ user.plainPassword }}</span>
+        <button class="remove-button" (click)="removeUser(user)">Entfernen</button>
+      </div>
+    </div>
+    <button class="home-button" (click)="showCourseManagementView()">Zurück</button>
+  </div>
+</div>

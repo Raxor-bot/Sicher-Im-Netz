@@ -1,0 +1,99 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.course-overview {
+  margin-top: 20px;
+}
+
+.course-overview h2 {
+  margin-bottom: 20px;
+}
+
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.course-card p {
+  margin: 0 0 20px 0;
+}
+
+.start-button {
+  background-color: #00796b;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: center;
+}
+
+.start-button:hover {
+  background-color: #004d40;
+}
+
+/* Allgemeine Button-Stile */
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+/* Spezifische Stile für Logout-Button */
+.logout-button {
+  background-color: #f44336;
+}
+
+/* Spezifische Stile für Einstellungs-Button */
+.settings-button {
+  background-color: #008CBA;
+}
+
+/* Hover-Effekte für alle Buttons */
+.button:hover {
+  opacity: 0.8;
+}
