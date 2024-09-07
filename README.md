@@ -2,7 +2,7 @@
 
 Dies ist die praktische Umsetzung für die Bachelorarbeit von Jannik Markau.
 
-Wichtig die environment.ts ergänzen, der Inhalt befindet sich in der BA.
+!Wichtig die environment.ts ergänzen, der Inhalt befindet sich in der BA.!
 
 ## Development server
 
