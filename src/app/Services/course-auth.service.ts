@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class CourseAuthService {
 
   private passwords : { [key: string]: string } = {
-    register : 'test',
+    register : 'Sicher-Im-Netz',
   };
 
   constructor() { }

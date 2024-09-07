@@ -29,14 +29,10 @@ export class PasswordsComponent {
   insecurePassword: string = '1234';
   passwordFeedback: string = '';
   sessionID: string = "";
-
-
   canRequestTip: boolean = true;
   tipTimer: any;
   timeLeft: number = 0;
-
   passwordInput: string = '';
-
   tips: string[] = [
     'Das Passwort enthält das Geburtsjahr.',
     'Das Passwort endet mit einem Sonderzeichen.',
@@ -47,7 +43,6 @@ export class PasswordsComponent {
   quizResult: boolean = false;
   quizResultMessage: string = '';
   quizExplanation: string = '';
-
   correctAnswers: { [key: string]: string } = {
     q1: 'c',
     q2: 'b',
@@ -58,15 +53,12 @@ export class PasswordsComponent {
   correctPasswordParts: string[] = ['Bello', '1990', 'Blau', '!'];
   isTeacher: boolean = false;
 
-
-
   constructor(private cookieService: CookieService, private firestore: Firestore, private router: Router) {}
 
-  async ngOnInit(){
+  async ngOnInit() {
     this.sessionID = this.cookieService.getCookie('sessionID') || '';
 
     if (this.sessionID) {
-
       const coll = collection(this.firestore, 'user');
       const q = query(coll, where('sessionID', '==', this.sessionID));
       const querySnapshot = await getDocs(q);
@@ -76,25 +68,29 @@ export class PasswordsComponent {
         this.isTeacher = userData['isTeacher'];
       }
     }
-    console.log(this.isTeacher)
+    console.log(this.isTeacher);
   }
 
+  // Wechselt zum nächsten Schritt und setzt die Flags zurück
   goToNext(): void {
     this.currentStep++;
     this.resetFlags();
   }
 
+  // Wechselt zum vorherigen Schritt und setzt die Flags zurück
   goToPrevious(): void {
     this.currentStep--;
     this.resetFlags();
   }
 
+  // Setzt die Zustandsflags für die Prüfungsergebnisse zurück
   resetFlags(): void {
     this.passwordCorrect = this.isTeacher;
     this.quizResult = this.isTeacher;
     this.isAnswerCorrect = this.isTeacher;
   }
 
+  // Prüft, ob das eingegebene Passwort korrekt ist
   checkPassword(): void {
     let correctPartsCount = 0;
 
@@ -114,6 +110,7 @@ export class PasswordsComponent {
     }
   }
 
+  // Gibt dem Benutzer einen Tipp zur Verbesserung des Passworts
   getTip(): void {
     if (this.canRequestTip) {
       if (this.displayedTips.length < this.tips.length) {
@@ -125,6 +122,7 @@ export class PasswordsComponent {
     }
   }
 
+  // Startet einen Timer für die nächste Tipp-Anforderung
   startTipTimer(): void {
     this.canRequestTip = false;
     this.timeLeft = 120; // 2 Minuten in Sekunden
@@ -137,6 +135,7 @@ export class PasswordsComponent {
     }, 1000); // Countdown in Sekunden
   }
 
+  // Validiert die Stärke des eingegebenen Passworts
   validatePassword(): void {
     const password = this.passwordInput;
     const hasUpperCase = /[A-Z]/.test(password);
@@ -148,6 +147,7 @@ export class PasswordsComponent {
     this.passwordCorrect = hasUpperCase && hasLowerCase && hasNumbers && hasSpecialChar && isLongEnough;
   }
 
+  // Prüft die Antworten des Quiz und gibt Feedback
   checkQuiz(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -170,6 +170,7 @@ export class PasswordsComponent {
     this.isAnswerCorrect = allCorrect;
   }
 
+  // Setzt ein neues Passwort für den Benutzer in der Datenbank
   async setPassword() {
     const sessionID = this.cookieService.getCookie('sessionID');
 
@@ -200,11 +201,13 @@ export class PasswordsComponent {
     }
   }
 
+  // Loggt den Benutzer aus und löscht die Session-ID
   logout() {
     this.cookieService.deleteCookie('sessionID');
     this.router.navigate(['/']);
   }
 
+  // Tiemr wird gelöscht
   ngOnDestroy(): void {
     clearTimeout(this.tipTimer);
   }

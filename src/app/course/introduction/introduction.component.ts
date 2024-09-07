@@ -8,13 +8,12 @@ import {
   getDocs,
   updateDoc,
   doc,
-  onSnapshot,
-  getDoc
+  onSnapshot
 } from '@angular/fire/firestore';
 import { NgClass, NgForOf, NgIf, NgStyle } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HomeButtonComponent } from '../../home-button/home-button.component';
-import {CookieService} from "../../Services/cookie.service";
+import { CookieService } from "../../Services/cookie.service";
 
 interface Url {
   address: string;
@@ -48,7 +47,6 @@ export class IntroductionComponent {
   isTeacher: boolean = false;
   assignedProblem: string = '';
   unsubscribe: (() => void) | undefined;
-
   urls: Url[] = [
     { address: 'http://www.Adresse1.com', checked: false, correct: false },
     { address: 'https://www.Adresse2.com', checked: false, correct: true },
@@ -77,11 +75,11 @@ export class IntroductionComponent {
     this.isTeacher = this.cookieService.getCookie('userRole') === 'teacher';
   }
 
-  async ngOnInit(){
+  // Initialisierungskomponente
+  async ngOnInit() {
     this.sessionID = this.cookieService.getCookie('sessionID') || '';
 
     if (this.sessionID) {
-
       const coll = collection(this.firestore, 'user');
       const q = query(coll, where('sessionID', '==', this.sessionID));
       const querySnapshot = await getDocs(q);
@@ -100,23 +98,26 @@ export class IntroductionComponent {
     }
   }
 
+  // Erklärungstext anzeigen/ausblenden
   showExplanation() {
     this.showExplanationText = !this.showExplanationText;
   }
 
+  // Wechsel zum nächsten Schritt
   goToNext(): void {
     this.currentStep++;
     this.userSolution = "";
     this.allCorrect = this.isTeacher;
-
   }
 
+  // Wechsel zum vorherigen Schritt
   goToPrevious(): void {
     this.currentStep--;
     this.userSolution = "";
     this.allCorrect = this.isTeacher;
   }
 
+  // Raum erstellen in Firestore
   async createRoom(event: Event) {
     event.preventDefault();
     const coll = collection(this.firestore, 'rooms');
@@ -131,6 +132,7 @@ export class IntroductionComponent {
     }
   }
 
+  // Raum beitreten
   async joinRoom(event: Event) {
     event.preventDefault();
     const coll = collection(this.firestore, 'rooms');
@@ -151,6 +153,7 @@ export class IntroductionComponent {
     }
   }
 
+  // Starten eines Raums für die Gruppenübung
   async startSession() {
     const roomRef = doc(this.firestore, 'rooms', this.roomId);
     const cyberProblems = ['Malware', 'Phishing', 'Ransomware', 'Spyware', 'Adware'];
@@ -171,6 +174,7 @@ export class IntroductionComponent {
     console.log('Session gestartet:', groups);
   }
 
+  // Fisher-Yates-Algorithmus zum Mischen eines Arrays
   shuffleArray(array: any[]): any[] {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -179,12 +183,15 @@ export class IntroductionComponent {
     return array;
   }
 
-  print(){
-   let popup = window.open("assets/kreuzwort.png");
-   // @ts-ignore
-    popup.window.print();
+  // Drucken einer Datei
+  print() {
+    let popup = window.open("assets/kreuzwort.png");
+    if (popup) {
+      popup.window.print();
+    }
   }
 
+  // Abonnieren von Raumänderungen
   subscribeToRoom() {
     const roomRef = doc(this.firestore, 'rooms', this.roomId);
     this.unsubscribe = onSnapshot(roomRef, (doc) => {
@@ -192,19 +199,11 @@ export class IntroductionComponent {
         console.log('Dokumentdaten:', doc.data());
         this.students = doc.data()['students'] || [];
         const groups = doc.data()['groups'] || {};
-        console.log('Aktuelle students:', this.students);
-        console.log('Aktuelle groups:', groups);
         if (this.studentName) {
-          console.log('studentName ist gesetzt:', this.studentName);
           this.assignedProblem = Object.keys(groups).find(key => groups[key].includes(this.studentName)) || '';
           if (this.assignedProblem) {
-            console.log('Zugewiesenes Problem:', this.assignedProblem);
             this.currentStep = 5;
-          } else {
-            console.log('Kein Problem zugewiesen.');
           }
-        } else {
-          console.log('studentName ist nicht gesetzt.');
         }
       } else {
         console.log('Dokument existiert nicht.');
@@ -212,6 +211,7 @@ export class IntroductionComponent {
     });
   }
 
+  // Überprüfen der Antworten für URLs
   checkAnswers(): void {
     let correctCount = 0;
     this.urls.forEach((url) => {
@@ -222,9 +222,9 @@ export class IntroductionComponent {
     this.allCorrect = correctCount === this.urls.length;
   }
 
+  // Überprüfen der Lösung für eine Aufgabe
   checkSolution() {
     const solution = 'CYBERSICHERHEIT';
-
     if (this.userSolution.trim().toUpperCase() === solution) {
       this.allCorrect = true;
       this.feedback = 'Richtig! Gut gemacht!';
@@ -233,6 +233,7 @@ export class IntroductionComponent {
     }
   }
 
+  // Überprüfen der Antworten für das Cookie-Quiz
   checkCookieQuizAnswers(): void {
     let correctAnswers = 0;
     this.cookieQuizAnswers.forEach(answer => {
@@ -248,5 +249,4 @@ export class IntroductionComponent {
       this.cookieQuizFeedback = `Du hast ${correctAnswers} von ${this.cookieQuizAnswers.length} richtig beantwortet. Überprüfe deine Antworten nochmal!`;
     }
   }
-
 }

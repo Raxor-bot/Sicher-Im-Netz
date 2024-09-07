@@ -19,8 +19,8 @@ export class HomeComponent {
   courses = [
     { title: 'Internetsicherheit', description: 'Grundlagen der Internetsicherheit', route: 'kurs/introduction' },
     { title:  'Passwörter', description: 'Passwortsicherheit einfach gemacht', route: 'kurs/passwordSecurity' },
-    { title: 'Soziale Medien', description: 'Soziale Netzwerke und ihre Risiken', route: 'kurs/socialNetwork' },
     { title: 'Verschlüsslungen', description: 'Sichere Kommunikation im Netz', route: 'kurs/communication'},
+    { title: 'Soziale Medien', description: 'Soziale Netzwerke und ihre Risiken', route: 'kurs/socialNetwork' },
     { title: 'Smartphone', description: 'Dein digitaler mobiler Computer', route: 'kurs/smartphone'}
   ];
 

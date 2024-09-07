@@ -28,7 +28,6 @@ export class SmartphoneComponent {
   quizResult: boolean = false;
   quizResultMessage: string = '';
   quizExplanation: string = '';
-
   correctAnswers: { [key: string]: string } = {
     q1: 'b',
     q2: 'b',
