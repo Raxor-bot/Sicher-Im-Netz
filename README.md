@@ -1,6 +1,8 @@
 # SicherImNetz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+Dies ist die praktische Umsetzung für die Bachelorarbeit von Jannik Markau.
+
+Wichtig die environment.ts ergänzen, der Inhalt befindet sich in der BA.
 
 ## Development server
 
