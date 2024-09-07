@@ -146,35 +146,35 @@
   </div>
 
   <div class="encryption-content" *ngIf="currentStep === 5">
-  <h1>Gruppenarbeit: Entwickle deine eigene Verschlüsselung</h1>
-  <p>In dieser Aufgabe wirst du zusammen mit zwei anderen Mitschülern eine eigene Verschlüsselungsmethode entwickeln. Eure Gruppe besteht aus insgesamt 3 Personen. Das Ziel ist es, eine Nachricht so zu verschlüsseln, dass nur die Gruppe, die eure Anleitung erhält, diese wieder entschlüsseln kann.</p>
+    <h1>Gruppenarbeit: Entwickle deine eigene Verschlüsselung</h1>
+    <p>In dieser Aufgabe wirst du zusammen mit zwei anderen Mitschülern eine eigene Verschlüsselungsmethode entwickeln. Eure Gruppe besteht aus insgesamt 3 Personen. Das Ziel ist es, eine Nachricht so zu verschlüsseln, dass nur die Gruppe, die eure Anleitung erhält, diese wieder entschlüsseln kann.</p>
 
-  <h2>Anleitung zur Erstellung eurer Verschlüsselung:</h2>
-  <ol>
-    <li>Trefft euch in eurer Gruppe und entscheidet, welche Art von Verschlüsselung ihr verwenden möchtet. Ihr könnt eine einfache Methode wie die Caesar-Verschlüsselung modifizieren oder euch eine komplett neue ausdenken.</li>
-    <li>Erstellt eine klare Anleitung, wie eure Verschlüsselung funktioniert. Diese Anleitung gebt ihr später an eine andere Gruppe weiter, damit sie eure verschlüsselte Nachricht entschlüsseln kann.</li>
-    <li>Verschlüsselt eine kurze Nachricht eurer Wahl mit eurer Methode.</li>
-  </ol>
+    <h2>Anleitung zur Erstellung eurer Verschlüsselung:</h2>
+    <ol>
+      <li>Trefft euch in eurer Gruppe und entscheidet, welche Art von Verschlüsselung ihr verwenden möchtet. Ihr könnt eine einfache Methode wie die Caesar-Verschlüsselung modifizieren oder euch eine komplett neue ausdenken.</li>
+      <li>Erstellt eine klare Anleitung, wie eure Verschlüsselung funktioniert. Diese Anleitung gebt ihr später an eine andere Gruppe weiter, damit sie eure verschlüsselte Nachricht entschlüsseln kann.</li>
+      <li>Verschlüsselt eine kurze Nachricht eurer Wahl mit eurer Methode.</li>
+    </ol>
 
-  <h2>Beispiel: Modifizierte Caesar-Verschlüsselung</h2>
-  <p>Ihr könnt zum Beispiel die Caesar-Verschlüsselung so anpassen, dass jeder Buchstabe im Text um die Position des Buchstabens im Alphabet verschoben wird. Wenn der Originalbuchstabe ein A (1. Buchstabe) ist, wird er um 1 Stelle verschoben, also zu B. Wenn der Buchstabe ein B (2. Buchstabe) ist, wird er um 2 Stellen verschoben, also zu D.</p>
-  <p><b>Originaltext:</b> HELLO</p>
-  <p><b>Verschlüsselter Text:</b> IGOPT (H→I, E→G, L→O, L→P, O→T)</p>
+    <h2>Beispiel: Modifizierte Caesar-Verschlüsselung</h2>
+    <p>Ihr könnt zum Beispiel die Caesar-Verschlüsselung so anpassen, dass jeder Buchstabe im Text um die Position des Buchstabens im Alphabet verschoben wird. Wenn der Originalbuchstabe ein A (1. Buchstabe) ist, wird er um 1 Stelle verschoben, also zu B. Wenn der Buchstabe ein B (2. Buchstabe) ist, wird er um 2 Stellen verschoben, also zu D.</p>
+    <p><b>Originaltext:</b> HELLO</p>
+    <p><b>Verschlüsselter Text:</b> IGOPT (H→I, E→G, L→O, L→P, O→T)</p>
 
-  <h2>Tipps:</h2>
-  <ul>
-    <li>Denk daran, dass eure Verschlüsselung sicher sein sollte, aber auch so verständlich, dass sie mit der Anleitung entschlüsselt werden kann.</li>
-    <li>Testet eure Methode zuerst in der Gruppe, um sicherzustellen, dass sie funktioniert.</li>
-  </ul>
+    <h2>Tipps:</h2>
+    <ul>
+      <li>Denk daran, dass eure Verschlüsselung sicher sein sollte, aber auch so verständlich, dass sie mit der Anleitung entschlüsselt werden kann.</li>
+      <li>Testet eure Methode zuerst in der Gruppe, um sicherzustellen, dass sie funktioniert.</li>
+    </ul>
 
-  <h2>Nach der Verschlüsselung:</h2>
-  <p>Nachdem ihr die Nachricht verschlüsselt habt, tauscht eure verschlüsselte Nachricht und die Anleitung mit einer anderen Gruppe. Diese Gruppe wird versuchen, eure Nachricht zu entschlüsseln.</p>
+    <h2>Nach der Verschlüsselung:</h2>
+    <p>Nachdem ihr die Nachricht verschlüsselt habt, tauscht eure verschlüsselte Nachricht und die Anleitung mit einer anderen Gruppe. Diese Gruppe wird versuchen, eure Nachricht zu entschlüsseln.</p>
 
-  <div class="button-container">
-    <button class="prev-button" (click)="goToPrevious()">Zurück</button>
-    <button class="next-button" (click)="goToNext()">Weiter</button>
+    <div class="button-container">
+      <button class="prev-button" (click)="goToPrevious()">Zurück</button>
+      <button class="next-button" (click)="goToNext()">Weiter</button>
+    </div>
   </div>
-</div>
 
 
   <div class="encryption-content" *ngIf="currentStep === 6">
@@ -182,11 +182,10 @@
     <p>Überlege, wo du im Alltag auf Verschlüsselung stößt. Beispiele können sein:</p>
     <ul>
       <li>WhatsApp und andere Messenger-Dienste, die Ende-zu-Ende-Verschlüsselung nutzen, um Nachrichten zu schützen.</li>
-      <li>Online-Banking, bei dem sensible Daten durch Verschlüsselung geschützt werden.</li>
-      <li>Verschlüsselte E-Mails, die sicherstellen, dass nur der beabsichtigte Empfänger den Inhalt lesen kann.</li>
       <li>Websites, die HTTPS verwenden, um eine sichere Verbindung zwischen deinem Browser und der Website herzustellen.</li>
     </ul>
     <p>Teile deine Erkenntnisse mit deinem Sitznachbarn und der Klasse.</p>
+    <p>Quelle: <a href="https://blog.whatsapp.com/end-to-end-encryption?lang=de_DE">Ende-zu-Ende-Verschlüsselung</a></p>
     <div class="button-container">
       <button class="prev-button" (click)="goToPrevious()">Zurück</button>
       <button class="next-button" (click)="goToNext()">Weiter</button>
@@ -197,10 +196,9 @@
     <h2>Zusammenfassung</h2>
     <p>In diesem Modul hast du gelernt, was Verschlüsselung ist, warum sie wichtig ist und wie verschiedene Verschlüsselungsmethoden funktionieren. Du hast selbst Verschlüsselung ausprobiert und gesehen, wie sie unsere Daten schützt.</p>
     <p>Die Beispiele aus dem Alltag zeigen, wie oft wir auf Verschlüsselung angewiesen sind, um unsere Informationen sicher zu halten, sei es bei der Kommunikation, beim Einkaufen oder bei der Nutzung von Online-Diensten.</p>
-  <br>
+    <br>
     <h2>Gehe nun zurück zur Startseite</h2>
   </div>
 
   <app-home-button></app-home-button>
 </div>
-

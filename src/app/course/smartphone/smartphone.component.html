@@ -13,9 +13,9 @@
       <li>Du weißt, wie du dein Smartphone sicherer machen kannst, zum Beispiel indem du die Standortdienste ausschaltest und genau prüfst, welche Apps welche Berechtigungen haben.</li>
       <li>Du erkennst, wie die Nutzung deines Smartphones deine Privatsphäre und dein Wohlbefinden beeinflussen kann, und überlegst dir, wie du dein Verhalten verbessern kannst, um dich besser zu schützen.</li>
     </ul>
-      <h2>Diskussion</h2>
-      <p>Tauscht euch aus:
-        <ul>
+    <h2>Diskussion</h2>
+    <p>Tauscht euch aus:
+    <ul>
       <li>Wie oft benutzt du dein Smartphone jeden Tag?</li>
       <li>Welche Apps verwendest du am meisten?</li>
       <li> Wie achtet ihr darauf, dass eure Smartphones sicher sind?</li>
@@ -31,7 +31,7 @@
     <ul>
       <li><strong>App-Berechtigungen:</strong> Viele Apps fragen nach Zugriffen, die sie vielleicht gar nicht benötigen, wie zum Beispiel auf deine Kontakte oder deinen Standort. Überlege dir immer genau, welche Berechtigungen eine App wirklich braucht.</li>
       <img src="https://i.computer-bild.de/imgs/7/7/9/4/4/8/5/Android-App-Berechtigungen-1024x576-df083e9487fd7d79.jpg?impolicy=full_content" alt="Bild mit einem Smartphone auf dem Berechtigungen dargestellt werden">
-      <p>Quelle: <a href="https://i.computer-bild.de/imgs/7/7/9/4/4/8/5/Android-App-Berechtigungen-1024x576-df083e9487fd7d79.jpg?impolicy=full_content">Android-Apps: Berechtigungen und ihre Bedeutung</a></p>
+      <p>Quelle: <a href="https://i.computer-bild.de/imgs/7/7/9/4/4/8/5/Android-App-Berechtigungen-1024x576-df083e9487fd7d79.jpg?impolicy=full_content">Bild</a></p>
       <li><strong>Standortfreigaben:</strong> Wenn du ständig deinen Standort teilst, wissen Apps und andere Nutzer immer, wo du bist. Das kann zu Problemen führen, wenn diese Informationen missbraucht werden.</li>
       <li><strong>Datenweitergabe:</strong> Manche Apps und Websites geben deine Daten an Dritte weiter, ohne dass du es weißt. Achte darauf, wie und wo du deine persönlichen Informationen teilst.</li>
     </ul>
@@ -47,6 +47,7 @@
     <p>Eine Schülerin hat ihren Standort in einer Social-Media-App dauerhaft freigegeben. Ein Fremder hat durch den geteilten Standort herausgefunden, wo sie sich oft aufhält, und begann ihr Nachrichten zu schicken. Wie hätte sie diese Situation vermeiden können?</p>
 
 
+    <p>Quelle: <a href="https://www.pcspezialist.de/blog/2024/05/22/app-berechtigungen/">App-Berechtigungen</a></p>
     <div class="button-container">
       <button class="prev-button" (click)="goToPrevious()">Zurück</button>
       <button class="next-button" (click)="goToNext()">Weiter</button>
@@ -144,6 +145,8 @@
       </div>
     </form>
 
+    <p>Quelle: <a href="https://www.spiegel.de/netzwelt/gadgets/zeitlimit-fuer-apps-setzen-auf-dem-iphone-oder-unter-android-so-leicht-geht-das-a-82d103a8-667a-40e1-a1d3-1536bb177e1a">Bildschirmzeit</a></p>
+
     <div *ngIf="quizResult">
       <h2>{{quizResultMessage}}</h2>
       <p>{{quizExplanation}}</p>
@@ -159,7 +162,7 @@
     <h2>WLAN, Wi-Fi und öffentliche Netzwerke</h2>
     <p>WLAN (Wi-Fi) ist eine praktische Möglichkeit, kabellos mit dem Internet verbunden zu sein. Besonders an öffentlichen Orten wie Cafés, Bibliotheken oder Bahnhöfen nutzen viele Menschen öffentliches WLAN. Doch dabei gibt es auch einige Risiken, die du kennen solltest. [1]</p>
 
-    <h3>Warum öffentliche Netzwerke riskant sein können</h3>
+    <h3>Warum öffentliche Netzwerke riskant sein können[2]</h3>
     <ul>
       <li><strong>Daten können mitgelesen werden:</strong> Wenn du dich mit einem öffentlichen WLAN verbindest, könnten andere Personen im gleichen Netzwerk sehen, welche Webseiten du besuchst oder welche Daten du sendest.</li>
       <li><strong>Gefälschte Netzwerke:</strong> Betrüger können Netzwerke einrichten, die wie echte öffentliche WLANs aussehen. Wenn du dich mit einem solchen Netzwerk verbindest, könnten deine Daten gestohlen werden.</li>
@@ -171,7 +174,9 @@
     <p>Diskutiere mit deinen Mitschülern: Wann würdest du ein öffentliches WLAN nutzen und wann würdest du es vermeiden? Was könntest du tun, um sicherer zu surfen, wenn du es nutzen musst?</p>
     <br>
     <p>Quelle:</p>
-    <p>[1] https://it-service.network/it-lexikon/wlan/</p>
+    <p><a href="https://it-service.network/wlan/">[1] WLAN</a></p>
+    <p><a href="https://www.kaspersky.de/resource-center/preemptive-safety/public-wifi-risks">[2] public-wifi-risks</a></p>
+
 
     <div class="button-container">
       <button class="prev-button" (click)="goToPrevious()">Zurück</button>
@@ -181,7 +186,7 @@
 
   <div class="smartphone-content" *ngIf="currentStep === 5">
     <h2>Reflexion und Diskussion über digitales Wohlbefinden</h2>
-    <p>Du hast sicherlich schon bemerkt, dass dein Smartphone viel Zeit in Anspruch nehmen kann. Doch hast du dir schon einmal überlegt, wie das deine Stimmung oder dein Wohlbefinden beeinflusst?</p>
+    <p>Du hast sicherlich schon bemerkt, dass dein Smartphone viel Zeit in Anspruch nehmen kann.</p>
 
     <p>
       Nimm dir Zeit, um über diese Fragen nachzudenken und notiere deine Gedanken. Diskutiere dann in kleinen Gruppen oder mit einem Partner, was fällt euch auf?
@@ -189,7 +194,7 @@
 
     <h2>Bildschirmzeit</h2>
     <p>
-      Verbringst du viel Zeit vor dem Bildschirm? Zu viel Bildschirmzeit kann dazu führen, dass du dich müde und gestresst fühlst. Es ist wichtig, eine Balance zu finden und auch mal offline zu sein. Überlege:
+      Verbringst du viel Zeit vor dem Bildschirm? Überlege:
     </p>
 
     <ul>
@@ -239,6 +244,8 @@
       <li>Welche konkreten Schritte wirst du unternehmen?</li>
       <li>Wie fühlst du dich dabei?</li>
     </ul>
+
+    <p>Quelle: <a href="https://www.hello-web.schule-des-hoerens-und-sehens.de/unterricht/staendige-erreichbarkeit#unterrichtsvorschlaege">staendige-erreichbarkeit#unterrichtsvorschlaege</a></p>
 
     <div class="button-container">
       <button class="prev-button" (click)="goToPrevious()">Zurück</button>
